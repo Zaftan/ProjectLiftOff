@@ -4,3 +4,9 @@ D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPE
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.exe
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.pdb
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\GXPEngine.exe
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\GXPEngine.pdb
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.csprojAssemblyReference.cache
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.csproj.CoreCompileInputs.cache
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.exe
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\obj\x86\Debug\GXPEngine.pdb
