@@ -8,9 +8,13 @@ public class Player : Sprite
 {
     PlayerBullet bullet;
 
+    float shootTime;
+
+    float playerHealth = 100f;
+
     float posX = 450f;
     float posY = 100f;
-    float speed = 5;
+    float speed = 4;
 
     public Player() : base(Settings.ASSET_PATH + "Art/Player.png")
     {
@@ -21,7 +25,12 @@ public class Player : Sprite
     void Update()
     {
         movement();
-        attack();
+
+        if(shootTime % 30 == 0)
+        {
+            attack();
+        }
+        shootTime++;
     }
 
     void movement()
@@ -46,15 +55,13 @@ public class Player : Sprite
 
         //Shoots if the mouse is bellow the horizontal axis. 
         if (Input.mouseY > Game.main.height/2)
-            if (Input.GetMouseButton(0))
-            {
-                {
-                    Game.main.AddChild(bullet);
+        {           
+                if (Input.GetMouseButton(0))
+                    {              
+                          Game.main.AddChild(bullet);
 
-                    /* new Sound("ping.wav").Play();*/
-                }
-            }
-        //on LEFT_CLICK create BULLET; BULLET = SPAWN_POS - ROADSPEED
-        //new Sound("ping.wav").Play();
+                          new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
+                    }
+        }
     }
 }
