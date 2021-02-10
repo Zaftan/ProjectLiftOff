@@ -60,7 +60,7 @@ public class Player : Sprite
                     {              
                           Game.main.AddChild(bullet);
 
-                          new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
+                          //new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
                     }
         }
     }
