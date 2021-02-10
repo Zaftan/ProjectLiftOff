@@ -7,7 +7,7 @@ public class MyGame : Game
 	//Idk what static does but it told me to put it in for something to work.
 	static public Player player;
 
-	public MyGame() : base(1920, 1080, true)
+	public MyGame() : base(1920, 1080, false)
 	{
 		player = new Player();
 		AddChild(player);
