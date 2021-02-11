@@ -6,12 +6,14 @@ using GXPEngine;
 
 public class Cop : Sprite
 {
-    private float health = 1;
-
+    private float copHealth = 50;
+    
     public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png")
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
+
+        
         this.x = posX;
         this.y = posY;
     }
@@ -20,7 +22,25 @@ public class Cop : Sprite
     {
         //this.x++; //posX++;
         //MyGame.builder.CountDown();
+        copDeath();
+        Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
 
-    //when it dies, call the My
+    void OnCollision(GameObject obj)
+    {
+        if (obj is PlayerBullet)
+        {
+            copHealth = copHealth - PlayerBullet.bulletDamage;
+        }
+    }
+
+    void copDeath()
+    {
+        if (copHealth <= 0)
+        {
+            LateDestroy();
+            HUD.SCORE += 10;
+            WaveBuilder.remainingEnemiesIntheWaves -= 1;
+        }
+    }
 }

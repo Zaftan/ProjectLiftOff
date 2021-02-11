@@ -25,7 +25,7 @@ public class Player : Sprite
     void Update()
     {
         movement();
-
+        //Fixes the attack speed.
         if(shootTime % 30 == 0)
         {
             attack();

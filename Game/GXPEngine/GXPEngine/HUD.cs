@@ -5,15 +5,15 @@ using System.Text;
 using GXPEngine;
 using System.Drawing;
 
-class HUD : Canvas
+public class HUD : Canvas
 {
     Player player;
 
     Font font = new Font("Arial", 20);
 
-    float SCORE = 0;
+    static public float SCORE = 0;
 
-    public HUD() : base(400, 300, addCollider: false)
+     public HUD() : base(400, 300, addCollider: false)
     {
         player = new Player();
     }

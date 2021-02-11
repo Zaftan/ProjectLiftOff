@@ -6,7 +6,7 @@ using GXPEngine;
 
 public class PlayerBullet : Sprite
 {
-    private float bulletDamage = 5f;
+    static public float bulletDamage = 10;
     private float bulletSpeed = 10f;
 
     /*Sets the target coordinates for where the bullet is being shot at*/
@@ -53,7 +53,19 @@ public class PlayerBullet : Sprite
         if (x > Game.main.width || x < 0 - width || y > Game.main.height)
         {
             LateDestroy();
-            Console.WriteLine("Bullet Destroyed");
+            //Console.WriteLine("Bullet Destroyed");
+        }
+    }
+    void OnCollision(GameObject obj)
+    {
+        if (obj is Cop)
+        {
+            LateDestroy();
+        }
+
+        if (obj is Border)
+        {
+            LateDestroy();
         }
     }
 }
