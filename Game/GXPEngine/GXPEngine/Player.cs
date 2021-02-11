@@ -12,8 +12,8 @@ public class Player : Sprite
 
     float playerHealth = 100f;
 
-    float posX = 450f;
-    float posY = 100f;
+    float posX = 850f;
+    float posY = 150f;
     float speed = 4;
 
     public Player() : base(Settings.ASSET_PATH + "Art/Player.png")
@@ -54,14 +54,13 @@ public class Player : Sprite
         bullet = new PlayerBullet();
 
         //Shoots if the mouse is bellow the horizontal axis. 
-        if (Input.mouseY > Game.main.height/2)
+        if (Input.mouseY > Game.main.height / 2)
         {           
-                if (Input.GetMouseButton(0))
-                    {              
-                          Game.main.AddChild(bullet);
-
-                          //new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
-                    }
+            if (Input.GetMouseButton(0))
+            {              
+                Game.main.AddChild(bullet);
+                //new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
+            }
         }
     }
 }
