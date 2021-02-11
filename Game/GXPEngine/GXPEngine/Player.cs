@@ -8,9 +8,9 @@ public class Player : Sprite
 {
     PlayerBullet bullet;
 
-    float shootTime;
+    public float playerHealth = 100f;
 
-    float playerHealth = 100f;
+    private float shootTime;
 
     float posX = 450f;
     float posY = 100f;
@@ -31,6 +31,11 @@ public class Player : Sprite
             attack();
         }
         shootTime++;
+    }
+
+    public float getHealth()
+    {
+        return playerHealth;
     }
 
     void movement()

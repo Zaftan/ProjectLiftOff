@@ -53,7 +53,7 @@ public class PlayerBullet : Sprite
         if (x > Game.main.width || x < 0 - width || y > Game.main.height)
         {
             LateDestroy();
-            Console.WriteLine("Bullet Destroyed");
+            Console.WriteLine("Bullet Destroyed"); 
         }
     }
 }
