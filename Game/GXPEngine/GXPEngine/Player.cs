@@ -63,4 +63,9 @@ public class Player : Sprite
             }
         }
     }
+
+    public float getHealth()
+    {
+        return playerHealth;
+    }
 }
