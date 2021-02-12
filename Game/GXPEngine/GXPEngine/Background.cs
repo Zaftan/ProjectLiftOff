@@ -6,17 +6,13 @@ using GXPEngine;
 
 class Background : AnimationSprite
 {
-    private float roadstart, roadStart;
+    private float roadstart;
     private float scrollSpeed = 15f;
-    private float spriteHeight, spriteScrolled;
+    private float spriteScrolled;
 
     public Background() : base(Settings.ASSET_PATH + "Art/Road.png", 1, 1, addCollider: false)
     {
-        spriteHeight = this.height;
         roadstart = this.height - 1080;
-        roadStart = this.height - 1080;
-
-
         this.y+= scrollSpeed;
     }
 
@@ -25,13 +21,10 @@ class Background : AnimationSprite
         SetOrigin(-300, roadstart);
         spriteScrolled = roadstart -= scrollSpeed;
 
-        spriteScrolled = spriteScrolled -= 1080;
-        if (spriteHeight == spriteScrolled)
+        if(spriteScrolled <= -200)
         {
-            this.y = roadStart;
-            //(this.y == -80)
-            //if sprite height = roadstart+=scrollspeed
-            //add new background remove old background
+            this.y = roadstart;
+            roadstart = this.height - 1080;
         }
     }
 }
