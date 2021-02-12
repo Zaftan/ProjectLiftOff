@@ -24,7 +24,7 @@ class Background : AnimationSprite
         if(spriteScrolled <= -200)
         {
             this.y = roadstart;
-            roadstart = this.height - 1080;
+            roadstart = this.height -1280;
         }
     }
 }
