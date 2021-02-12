@@ -6,8 +6,25 @@ using GXPEngine;
 
 class Background : AnimationSprite
 {
-    public Background() : base(Settings.ASSET_PATH + "Art/Road.gif", 1, 1, addCollider: false)
+    private float roadstart;
+    private float scrollSpeed = 15f;
+    private float spriteScrolled;
+
+    public Background() : base(Settings.ASSET_PATH + "Art/Road.png", 1, 1, addCollider: false)
     {
-        SetOrigin(-300, -80);
+        roadstart = this.height - 1080;
+        this.y+= scrollSpeed;
+    }
+
+    void Update()
+    {
+        SetOrigin(-300, roadstart);
+        spriteScrolled = roadstart -= scrollSpeed;
+
+        if(spriteScrolled <= -200)
+        {
+            this.y = roadstart;
+            roadstart = this.height -1280;
+        }
     }
 }

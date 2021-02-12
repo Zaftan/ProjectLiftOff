@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-public class Player : Sprite
+public class Player : AnimationSprite
 {
     PlayerBullet bullet;
 
@@ -13,20 +13,22 @@ public class Player : Sprite
     float playerHealth = 100f;
 
     float posX = 850f;
-    float posY = 150f;
+    float posY = 350f;
     float speed = 4;
 
-    public Player() : base(Settings.ASSET_PATH + "Art/Player.png")
+    public Player() : base(Settings.ASSET_PATH + "Art/Player.png", 8, 3, 20)
     {
+        SetOrigin(width / 2.0f, height / 2.0f);
         this.x = posX;
         this.y = posY;
     }
 
     void Update()
     {
+        Animate();
         movement();
         //Fixes the attack speed.
-        if(shootTime % 30 == 0)
+        if(shootTime % 25 == 0)
         {
             attack();
         }
@@ -39,11 +41,17 @@ public class Player : Sprite
 
         if (Input.GetKey(Key.A))
         {
+            this.rotation = -5;
             posX -= speed;
         }
         else if (Input.GetKey(Key.D))
         {
+            this.rotation = 5;
             posX += speed;
+        }
+        else
+        {
+            this.rotation = 0;
         }
 
         MoveUntilCollision(posX, 0);
