@@ -28,7 +28,7 @@ public class HUD : Canvas
         string score = "Score: " + SCORE;
         string health = "Health: " + player.getHealth();
         graphics.Clear(Color.Empty);
-        graphics.DrawString(score, font, Brushes.Black, 30, 30);
-        graphics.DrawString(health, font, Brushes.Black, 200, 30);
+        graphics.DrawString(score, font, Brushes.White, 30, 30);
+        graphics.DrawString(health, font, Brushes.White, 200, 30);
     }
 }

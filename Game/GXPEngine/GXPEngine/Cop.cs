@@ -7,19 +7,24 @@ using GXPEngine;
 public class Cop : Sprite
 {
     private float copHealth = 50;
+    private float copSpeed;
     
     public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png")
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
-
-        
+        Random rnd = new Random();
+        copSpeed = rnd.Next(4, 16);
         this.x = posX;
         this.y = posY;
     }
 
     void Update()
     {
+        if (this.y >= 700)
+        {
+            this.y -= copSpeed;
+        }
         //this.x++; //posX++;
         //MyGame.builder.CountDown();
         copDeath();

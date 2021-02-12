@@ -6,6 +6,7 @@ using GXPEngine;
 
 public class WaveBuilder
 {
+    static public float remainingEnemiesIntheWaves;
     private int waves = 1;
 
     public WaveBuilder()
@@ -23,7 +24,6 @@ public class WaveBuilder
         }
         waves++;
     }
-   static public float remainingEnemiesIntheWaves;
 
     public void CountDown()
     {
@@ -35,15 +35,15 @@ public class WaveBuilder
 
     private void wave1()
     {
-        Cop cop = new Cop(450f, 700f);
+        Cop cop = new Cop(450f, 1300f);
         Game.main.LateAddChild(cop);
         remainingEnemiesIntheWaves = 1;
     }
 
     private void wave2()
     {
-        Cop cop = new Cop(450f, 700f);
-        Cop cop2 = new Cop(750f, 700f);
+        Cop cop = new Cop(450f, 1300f);
+        Cop cop2 = new Cop(750f, 1300f);
         Game.main.LateAddChild(cop);
         Game.main.LateAddChild(cop2);
         remainingEnemiesIntheWaves = 2;
@@ -51,9 +51,9 @@ public class WaveBuilder
 
     private void wave3()
     {
-        Cop cop = new Cop(450f, 700f);
-        Cop cop2 = new Cop(750f, 700f);
-        Cop cop3 = new Cop(1050f, 700f);
+        Cop cop = new Cop(450f, 1300f);
+        Cop cop2 = new Cop(750f, 1300f);
+        Cop cop3 = new Cop(1050f, 1300f);
         Game.main.LateAddChild(cop);
         Game.main.LateAddChild(cop2);
         Game.main.LateAddChild(cop3);
