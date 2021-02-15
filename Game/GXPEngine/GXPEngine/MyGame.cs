@@ -1,38 +1,41 @@
-using System;									// System contains a lot of default C# libraries 
-using System.Drawing;                           // System.Drawing contains a library used for canvas drawing below
-using GXPEngine;								// GXPEngine contains the engine
+using System;
+using System.Drawing;
+using GXPEngine;
 
 public class MyGame : Game
 {
-	public MyGame() : base(800, 600, false)		// Create a window that's 800x600 and NOT fullscreen
+	//Idk what static does but it told me to put it in for something to work.
+	static public Player player;
+	static public WaveBuilder builder;
+	public MyGame() : base(1920, 1080, false)
 	{
-        //----------------------------------------------------example-code----------------------------
-        //create a canvas
-        Canvas canvas = new Canvas(800, 600);
-
-        //add some content
-        canvas.graphics.FillRectangle(new SolidBrush(Color.Red), new Rectangle(0, 0, 400, 300));
-        canvas.graphics.FillRectangle(new SolidBrush(Color.Blue), new Rectangle(400, 0, 400, 300));
-        canvas.graphics.FillRectangle(new SolidBrush(Color.Yellow), new Rectangle(0, 300, 400, 300));
-        canvas.graphics.FillRectangle(new SolidBrush(Color.Gray), new Rectangle(400, 300, 400, 300));
-
-        //add canvas to display list
-        AddChild(canvas);
-        //------------------------------------------------end-of-example-code-------------------------
-    }
-
-    void Update()
-	{
-		//----------------------------------------------------example-code----------------------------
-		if (Input.GetKeyDown(Key.SPACE)) // When space is pressed...
-		{
-			new Sound("ping.wav").Play(); // ...play a sound
-		}
-		//------------------------------------------------end-of-example-code-------------------------
+		Border border = new Border();
+		Background background = new Background();
+		HUD hud = new HUD();
+		player = new Player();
+		builder = new WaveBuilder();
+		builder.WaveSpawner();
+		AddChild(background);
+		AddChild(border);
+		AddChild(player);
+		AddChild(hud);
+	}
+	void Update()
+    {
+        cheats();
+		builder.CountDown();
 	}
 
-	static void Main()							// Main() is the first method that's called when the program is run
+    private static void cheats()
+    {
+        if (Input.GetKeyDown(Key.M))
+        {
+            builder.WaveSpawner();
+        }
+    }
+
+    static void Main()
 	{
-		new MyGame().Start();					// Create a "MyGame" and start it
+		new MyGame().Start();
 	}
 }
