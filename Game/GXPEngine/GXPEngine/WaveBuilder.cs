@@ -61,7 +61,6 @@ public class WaveBuilder
         Game.main.LateAddChild(cop3);
         remainingEnemiesIntheWaves = 3;
     }
-
     private void wave4()
     {
         Cop cop = new Cop(440f, 1200f);
@@ -74,7 +73,6 @@ public class WaveBuilder
         Game.main.LateAddChild(cop4);
         remainingEnemiesIntheWaves = 4;
     }
-
     private void wave5()
     {
         Cop cop = new Cop(440f, 1200f);

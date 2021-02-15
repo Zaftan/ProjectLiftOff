@@ -7,15 +7,12 @@ using System.Drawing;
 
 public class HUD : Canvas
 {
-    Player player;
 
     Font font = new Font("Arial", 20);
 
     static public float SCORE = 0;
-
      public HUD() : base(400, 300, addCollider: false)
     {
-        player = new Player();
     }
     void Update()
     {
@@ -26,9 +23,9 @@ public class HUD : Canvas
     void showHud()
     {
         string score = "Score: " + SCORE;
-        string health = "Health: " + player.getHealth();
+        string health = "Health: " + MyGame.player.getHealth();
         graphics.Clear(Color.Empty);
-        graphics.DrawString(score, font, Brushes.White, 30, 30);
         graphics.DrawString(health, font, Brushes.White, 200, 30);
+        graphics.DrawString(score, font, Brushes.White, 30, 30);
     }
 }
