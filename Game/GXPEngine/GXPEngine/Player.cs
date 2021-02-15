@@ -10,8 +10,8 @@ public class Player : AnimationSprite
 
     float shootTime;
 
-    float playerHealth = 100f;
-
+    public float playerHealth = 100f;
+    private float attackSpeed = 25;
     float posX = 850f;
     float posY = 350f;
     float speed = 4;
@@ -28,11 +28,20 @@ public class Player : AnimationSprite
         Animate();
         movement();
         //Fixes the attack speed.
-        if(shootTime % 25 == 0)
+        if(shootTime % attackSpeed == 0)
         {
             attack();
         }
         shootTime++;
+        Console.WriteLine("Health:" + playerHealth);
+    }
+
+    void OnCollision(GameObject obj)
+    {
+        if (obj is EnemyBullet)
+        {
+            playerHealth = playerHealth - EnemyBullet.bulletDamage;
+        }
     }
 
     void movement()

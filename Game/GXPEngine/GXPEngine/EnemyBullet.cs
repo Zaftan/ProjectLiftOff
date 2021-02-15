@@ -4,23 +4,19 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-public class PlayerBullet : Sprite
+class EnemyBullet : Sprite
 {
-    static public float bulletDamage = 10;
-    private float bulletSpeed = 10f;
+    static public float bulletDamage = 5;
+    private float bulletSpeed = 3f;
 
     /*Sets the target coordinates for where the bullet is being shot at*/
-    private float targetX = Input.mouseX;
-    private float targetY = Input.mouseY;
-
-    /*Sets the target coordinates for where the bullet is being shot from*/
-    private float shootPointX = MyGame.player.x - 15f ;
-    private float shootPointY = MyGame.player.y + 85f;
+    private float targetX = MyGame.player.x;
+    private float targetY = MyGame.player.y;
 
     private float dirX;
     private float dirY;
 
-    public PlayerBullet() : base(Settings.ASSET_PATH + "Art/PlayerBullet.png")
+    public EnemyBullet(float shootPointX, float shootPointY) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png")
     {
         this.x = shootPointX;
         this.y = shootPointY;
@@ -38,7 +34,7 @@ public class PlayerBullet : Sprite
     {
         BulletTarget();
         BulletDestroy();
-    }        
+    }
 
     //Function for the bullet path and where it should go.
     void BulletTarget()
@@ -50,7 +46,7 @@ public class PlayerBullet : Sprite
     //Destroys the bullet when getting out of screen.
     void BulletDestroy()
     {
-        if (x > Game.main.width || x < 0 - width || y > Game.main.height)
+        if (x > Game.main.width || x < 0 - width || y < 0 - height)
         {
             LateDestroy();
             //Console.WriteLine("Bullet Destroyed");
@@ -58,7 +54,7 @@ public class PlayerBullet : Sprite
     }
     void OnCollision(GameObject obj)
     {
-        if (obj is Cop)
+        if (obj is Player)
         {
             LateDestroy();
         }
@@ -68,7 +64,7 @@ public class PlayerBullet : Sprite
             LateDestroy();
         }
 
-        if (obj is EnemyBullet)
+        if (obj is PlayerBullet)
         {
             LateDestroy();
 
