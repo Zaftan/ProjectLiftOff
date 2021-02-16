@@ -4,31 +4,31 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-public class Cop : AnimationSprite
+public class Bike : AnimationSprite
 {
     //Fixes the attack speed.
     private float attackSpeed = 100;
-    private float copHealth = 30;
-    private float copSpeed;
+    private float bikeHealth = 10;
+    private float fbiSpeed;
 
-    public float copX;
-    public float copY;
+    public float bikeX;
+    public float bikeY;
     float shootTime;
 
     bool hasStoped = false;
 
     EnemyBullet bullet;
 
-    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 2, 10)
+    public Bike(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/SmallCop.png", 5, 2, 20)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
         Random rnd = new Random();
-        copSpeed = rnd.Next(4, 16);
+        fbiSpeed = rnd.Next(4, 16);
         this.x = posX;
         this.y = posY;
-        copX = this.x;
-        copY = this.y;
+        bikeX = this.x;
+        bikeY = this.y;
     }
 
     void Update()
@@ -41,10 +41,10 @@ public class Cop : AnimationSprite
 
         if (this.y >= 800)
         {
-            this.y -= copSpeed;
+            this.y -= fbiSpeed;
             hasStoped = true;
         }
-        
+
         copDeath();
         Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
@@ -53,7 +53,7 @@ public class Cop : AnimationSprite
     {
         if (obj is PlayerBullet)
         {
-            copHealth = copHealth - PlayerBullet.bulletDamage;
+            bikeHealth = bikeHealth - PlayerBullet.bulletDamage;
         }
     }
 
@@ -69,7 +69,7 @@ public class Cop : AnimationSprite
 
     void copDeath()
     {
-        if (copHealth <= 0)
+        if (bikeHealth <= 0)
         {
             LateDestroy();
             HUD.SCORE += 50;
