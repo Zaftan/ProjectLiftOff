@@ -67,7 +67,6 @@ class EnemyBullet : Sprite
         if (obj is PlayerBullet)
         {
             LateDestroy();
-
         }
     }
 }

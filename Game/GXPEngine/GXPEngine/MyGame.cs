@@ -7,16 +7,19 @@ public class MyGame : Game
 	//Idk what static does but it told me to put it in for something to work.
 	static public Player player;
 	static public WaveBuilder builder;
+
 	public MyGame() : base(1920, 1080, false)
 	{
 		Border border = new Border();
 		Background background = new Background();
+		Crosshair cs = new Crosshair();
 		HUD hud = new HUD();
 		player = new Player();
 		builder = new WaveBuilder();
 		builder.WaveSpawner();
 		AddChild(background);
 		AddChild(border);
+		AddChild(cs);
 		AddChild(player);
 		AddChild(hud);
 	}

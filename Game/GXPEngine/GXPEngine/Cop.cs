@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-public class Cop : Sprite
+public class Cop : AnimationSprite
 {
     //Fixes the attack speed.
     private float attackSpeed = 100;
@@ -19,7 +19,7 @@ public class Cop : Sprite
 
     EnemyBullet bullet;
 
-    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png")
+    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png",5 ,2 ,20 )
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
