@@ -16,6 +16,8 @@ public class Player : AnimationSprite
     float posY = 350f;
     float speed = 4;
 
+    bool canMoveLeft, canMoveRight = true;
+
     public Player() : base(Settings.ASSET_PATH + "Art/Player.png", 8, 3, 20)
     {
         SetOrigin(width / 2.0f, height / 2.0f);
@@ -47,13 +49,13 @@ public class Player : AnimationSprite
     void movement()
     {
         posX = 0;
-
-        if (Input.GetKey(Key.A))
+        
+        if (Input.GetKey(Key.A) && canMoveLeft)
         {
             this.rotation = -5;
             posX -= speed;
         }
-        else if (Input.GetKey(Key.D))
+        else if (Input.GetKey(Key.D) && canMoveRight)
         {
             this.rotation = 5;
             posX += speed;
@@ -61,6 +63,21 @@ public class Player : AnimationSprite
         else
         {
             this.rotation = 0;
+        }
+        Console.WriteLine(this.x);
+
+        if(this.x <= 400)
+        {
+            canMoveLeft = false;
+        }
+        else if(this.x >= 1435)
+        {
+            canMoveRight = false;
+        }
+        else
+        {
+            canMoveLeft = true;
+            canMoveRight = true;
         }
 
         MoveUntilCollision(posX, 0);
