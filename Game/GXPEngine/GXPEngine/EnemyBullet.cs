@@ -6,7 +6,7 @@ using GXPEngine;
 
 class EnemyBullet : Sprite
 {
-    static public float bulletDamage = 5;
+    static public float bulletDamage = 10;
     private float bulletSpeed = 3f;
 
     /*Sets the target coordinates for where the bullet is being shot at*/

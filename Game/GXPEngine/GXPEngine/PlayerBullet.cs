@@ -63,6 +63,16 @@ public class PlayerBullet : Sprite
             LateDestroy();
         }
 
+        if (obj is FBI)
+        {
+            LateDestroy();
+        }
+        
+        if (obj is Bike)
+        {
+            LateDestroy();
+        }
+
         if (obj is Border)
         {
             LateDestroy();
