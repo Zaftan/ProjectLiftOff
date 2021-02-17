@@ -87,13 +87,15 @@
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerBullet.cs" />
+    <Compile Include="PowerUpGun.cs" />
+    <Compile Include="PowerUpLife.cs" />
+    <Compile Include="PowerUpShield.cs" />
     <Compile Include="RoadBlock.cs" />
     <Compile Include="Smoke.cs" />
     <Compile Include="TopWaveBuilder.cs" />
     <Compile Include="Warning.cs" />
     <Compile Include="WaveBuilder.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="Assets\Art\BackgroundLight.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -116,10 +118,25 @@
     <Content Include="Assets\Art\EnemyBullet.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Assets\Art\GameOver.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\InsertCoin.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Assets\Art\Player.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Art\PlayerBullet.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\PowerUpGun.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\PowerUpLife.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\PowerUpShield.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Art\Road.png">
@@ -129,6 +146,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Art\SpikeTrap.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\Warning.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

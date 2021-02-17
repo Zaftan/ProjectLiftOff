@@ -7,7 +7,7 @@ using GXPEngine;
 public class TopWaveBuilder
 {
     static public float counter;
-    private int waves = 1;
+    private int waves = 10;
     public Random rnd;
 
     public TopWaveBuilder()
@@ -18,7 +18,6 @@ public class TopWaveBuilder
     public void Update()
     {
         counter++;
-        Console.WriteLine("" + counter);
     }
 
     public void WaveSpawner()
@@ -31,10 +30,14 @@ public class TopWaveBuilder
             case 4: wave4(); break;
             case 5: wave5(); break;
             case 6: wave6(); break;
+            case 7: wave7(); break;
+            case 8: wave8(); break;
+            case 9: wave9(); break;
+            case 10: wave10(); break;
 
 
         }
-        waves = rnd.Next(1, 7);
+        waves = rnd.Next(1, 8);
     }
 
     public void CountDown()
@@ -48,7 +51,7 @@ public class TopWaveBuilder
     private void wave1()
     {
         RoadBlock RB = new RoadBlock(387);
-        Warning WR = new Warning(450, 100);
+        Warning WR = new Warning(410);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
     }
@@ -56,7 +59,7 @@ public class TopWaveBuilder
     private void wave2()
     {
         RoadBlock RB = new RoadBlock(603);
-        Warning WR = new Warning(670, 100);
+        Warning WR = new Warning(630);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
     }
@@ -64,7 +67,7 @@ public class TopWaveBuilder
     private void wave3()
     {
         RoadBlock RB = new RoadBlock(821);
-        Warning WR = new Warning(890, 100);
+        Warning WR = new Warning(850);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
     }
@@ -72,7 +75,7 @@ public class TopWaveBuilder
     private void wave4()
     {
         RoadBlock RB = new RoadBlock(1037);
-        Warning WR = new Warning(1100, 100);
+        Warning WR = new Warning(1060);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
     }
@@ -80,7 +83,7 @@ public class TopWaveBuilder
     private void wave5()
     {
         RoadBlock RB = new RoadBlock(1247);
-        Warning WR = new Warning(1320, 100);
+        Warning WR = new Warning(1280);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
     }
@@ -88,12 +91,44 @@ public class TopWaveBuilder
     private void wave6()
     {
         RoadBlock RB2 = new RoadBlock(1037);
-        Warning WR2 = new Warning(1100, 100);
+        Warning WR2 = new Warning(1060);
         RoadBlock RB = new RoadBlock(1247);
-        Warning WR = new Warning(1320, 100);
+        Warning WR = new Warning(1280);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(RB2);
         Game.main.LateAddChild(WR);
         Game.main.LateAddChild(WR2);
+    }
+
+    private void wave7()
+    {
+        PowerUpLife pul = new PowerUpLife(435);
+        Game.main.LateAddChild(pul);
+    }
+
+    private void wave8()
+    {
+        PowerUpGun pug = new PowerUpGun(435);
+        Game.main.LateAddChild(pug);
+    }
+
+    private void wave9()
+    {
+        PowerUpShield pus = new PowerUpShield(650);
+        Game.main.LateAddChild(pus);
+    }
+
+    private void wave10()
+    {
+        PowerUpShield pus = new PowerUpShield(435);
+        Game.main.LateAddChild(pus);
+        PowerUpLife pul2 = new PowerUpLife(650);
+        Game.main.LateAddChild(pul2);
+/*        PowerUpLife pul3 = new PowerUpLife(865);
+        Game.main.LateAddChild(pul3);
+        PowerUpLife pul4 = new PowerUpLife(1080);
+        Game.main.LateAddChild(pul4);
+        PowerUpLife pul5 = new PowerUpLife(1295);
+        Game.main.LateAddChild(pul5);*/
     }
 }
