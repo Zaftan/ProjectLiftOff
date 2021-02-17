@@ -33,6 +33,8 @@ public class FBI : AnimationSprite
 
     void Update()
     {
+        Animate();
+
         if (shootTime % attackSpeed == 0)
         {
             attack();
@@ -59,7 +61,7 @@ public class FBI : AnimationSprite
 
     void attack()
     {
-        bullet = new EnemyBullet(this.x + 70f, this.y + 50f);
+        bullet = new EnemyBullet(this.x + 70f, this.y + 50f, 10);
 
         if (hasStoped)
         {

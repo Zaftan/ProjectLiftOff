@@ -8,11 +8,13 @@ public class MyGame : Game
 	static public Player player;
 	static public WaveBuilder builder;
 
+
+	private Crosshair cs;// = new Crosshair();
 	public MyGame() : base(1920, 1080, false)
 	{
 		Border border = new Border();
 		Background background = new Background();
-		Crosshair cs = new Crosshair();
+		cs = new Crosshair();
 		HUD hud = new HUD();
 		player = new Player();
 		builder = new WaveBuilder();
@@ -22,11 +24,13 @@ public class MyGame : Game
 		AddChild(cs);
 		AddChild(player);
 		AddChild(hud);
+		SetChildIndex(cs, GetChildren().Count - 1);
 	}
 	void Update()
     {
         cheats();
 		builder.CountDown();
+		SetChildIndex(cs, GetChildren().Count - 1);
 	}
 
     private static void cheats()

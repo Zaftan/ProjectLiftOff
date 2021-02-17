@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GXPEngine;
+using GXPEngine.Core;
 
 public class Player : AnimationSprite
 {
@@ -42,7 +43,8 @@ public class Player : AnimationSprite
     {
         if (obj is EnemyBullet)
         {
-            playerHealth = playerHealth - EnemyBullet.bulletDamage;
+            //playerHealth = playerHealth - EnemyBullet.bulletDamage;
+            obj.LateDestroy();
         }
     }
 
@@ -57,7 +59,7 @@ public class Player : AnimationSprite
         }
         else if (Input.GetKey(Key.D) && canMoveRight)
         {
-            this.rotation = 5;
+           this.rotation = 5;
             posX += speed;
         }
         else
@@ -80,7 +82,12 @@ public class Player : AnimationSprite
             canMoveRight = true;
         }
 
-        MoveUntilCollision(posX, 0);
+        Collision cobj = MoveUntilCollision(posX, 0);
+        if(cobj != null &&  cobj.other is EnemyBullet)
+        {
+            playerHealth = playerHealth - EnemyBullet.bulletDamage;
+            cobj.other.LateDestroy();
+        }
     }
 
     void attack()
