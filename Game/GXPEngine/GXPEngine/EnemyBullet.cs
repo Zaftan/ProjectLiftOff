@@ -6,7 +6,7 @@ using GXPEngine;
 
 class EnemyBullet : Sprite
 {
-    static public float bulletDamage = 10;
+    static public float bulletDamage;
     private float bulletSpeed = 3f;
 
     /*Sets the target coordinates for where the bullet is being shot at*/
@@ -16,7 +16,7 @@ class EnemyBullet : Sprite
     private float dirX;
     private float dirY;
 
-    public EnemyBullet(float shootPointX, float shootPointY) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png")
+    public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png")
     {
         this.x = shootPointX;
         this.y = shootPointY;
@@ -25,6 +25,7 @@ class EnemyBullet : Sprite
         dirY = targetY - shootPointY;
 
         float mag = Mathf.Sqrt(dirX * dirX + dirY * dirY);
+        bulletDamage = bulletDmg;
 
         dirX /= mag;
         dirY /= mag;
@@ -41,6 +42,7 @@ class EnemyBullet : Sprite
     {
         x += dirX * bulletSpeed;
         y += dirY * bulletSpeed;
+        //MoveUntilCollision(dirX * bulletSpeed, dirY * bulletSpeed);
     }
 
     //Destroys the bullet when getting out of screen.
