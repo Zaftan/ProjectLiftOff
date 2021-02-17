@@ -84,6 +84,9 @@
     <Compile Include="GXPEngine\SoLoud\SoloudSoundSystem.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="PlayerBullet.cs" />
+    <Compile Include="RoadBlock.cs" />
+    <Compile Include="TopWaveBuilder.cs" />
+    <Compile Include="Warning.cs" />
     <Compile Include="WaveBuilder.cs" />
   </ItemGroup>
   <ItemGroup>

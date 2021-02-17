@@ -7,6 +7,7 @@ public class MyGame : Game
 	//Idk what static does but it told me to put it in for something to work.
 	static public Player player;
 	static public WaveBuilder builder;
+	static public TopWaveBuilder topBuilder;
 
 	public MyGame() : base(1920, 1080, false)
 	{
@@ -17,6 +18,8 @@ public class MyGame : Game
 		player = new Player();
 		builder = new WaveBuilder();
 		builder.WaveSpawner();
+		topBuilder = new TopWaveBuilder();
+        topBuilder.WaveSpawner();
 		AddChild(background);
 		AddChild(border);
 		AddChild(cs);
@@ -27,6 +30,8 @@ public class MyGame : Game
     {
         cheats();
 		builder.CountDown();
+		topBuilder.Update();
+		topBuilder.CountDown();
 	}
 
     private static void cheats()

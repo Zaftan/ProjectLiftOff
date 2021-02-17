@@ -39,14 +39,13 @@ public class Cop : AnimationSprite
         }
         shootTime++;
 
-        if (this.y >= 700)
+        if (this.y >= 800)
         {
             this.y -= copSpeed;
             hasStoped = true;
         }
         
         copDeath();
-        Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
 
     void OnCollision(GameObject obj)

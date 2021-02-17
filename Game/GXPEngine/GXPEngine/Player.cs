@@ -35,7 +35,6 @@ public class Player : AnimationSprite
             attack();
         }
         shootTime++;
-        Console.WriteLine("Health:" + playerHealth);
     }
 
     void OnCollision(GameObject obj)
@@ -43,6 +42,11 @@ public class Player : AnimationSprite
         if (obj is EnemyBullet)
         {
             playerHealth = playerHealth - EnemyBullet.bulletDamage;
+        }
+
+        if (obj is RoadBlock)
+        {
+            playerHealth = playerHealth - RoadBlock.blockDamage;
         }
     }
 
@@ -64,7 +68,6 @@ public class Player : AnimationSprite
         {
             this.rotation = 0;
         }
-        Console.WriteLine(this.x);
 
         if(this.x <= 400)
         {
