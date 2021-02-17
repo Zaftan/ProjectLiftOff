@@ -8,32 +8,44 @@ public class MyGame : Game
 	static public Player player;
 	static public WaveBuilder builder;
 	static public TopWaveBuilder topBuilder;
-
+	Border border;
+	Smoke smoke;
+	Lights lights;
+	HUD hud;
 
 	private Crosshair cs;// = new Crosshair();
 	public MyGame() : base(1920, 1080, false)
 	{
-		Border border = new Border();
+		border = new Border();
 		Background background = new Background();
+		smoke = new Smoke();
+		lights = new Lights();
 		cs = new Crosshair();
-		HUD hud = new HUD();
+		hud = new HUD();
 		player = new Player();
 		builder = new WaveBuilder();
 		builder.WaveSpawner();
 		topBuilder = new TopWaveBuilder();
         topBuilder.WaveSpawner();
+		AddChild(hud);
 		AddChild(background);
 		AddChild(border);
+		AddChild(lights);
+		AddChild(smoke);
 		AddChild(cs);
 		AddChild(player);
-		AddChild(hud);
-		SetChildIndex(cs, GetChildren().Count - 1);
+		
+
 	}
 	void Update()
     {
         cheats();
 		builder.CountDown();
-		SetChildIndex(cs, GetChildren().Count - 1);
+		SetChildIndex(smoke, GetChildren().Count - 4);
+		SetChildIndex(lights, GetChildren().Count - 3);
+		SetChildIndex(cs, GetChildren().Count - 2);
+		SetChildIndex(border, GetChildren().Count - 1);
+		SetChildIndex(hud, GetChildren().Count - 0);
 		topBuilder.Update();
 		topBuilder.CountDown();
 	}

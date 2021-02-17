@@ -47,7 +47,7 @@ public class TopWaveBuilder
 
     private void wave1()
     {
-        RoadBlock RB = new RoadBlock(387, -600);
+        RoadBlock RB = new RoadBlock(387);
         Warning WR = new Warning(450, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
@@ -55,7 +55,7 @@ public class TopWaveBuilder
 
     private void wave2()
     {
-        RoadBlock RB = new RoadBlock(603, -600);
+        RoadBlock RB = new RoadBlock(603);
         Warning WR = new Warning(670, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
@@ -63,7 +63,7 @@ public class TopWaveBuilder
 
     private void wave3()
     {
-        RoadBlock RB = new RoadBlock(821, -600);
+        RoadBlock RB = new RoadBlock(821);
         Warning WR = new Warning(890, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
@@ -71,7 +71,7 @@ public class TopWaveBuilder
 
     private void wave4()
     {
-        RoadBlock RB = new RoadBlock(1037, -600);
+        RoadBlock RB = new RoadBlock(1037);
         Warning WR = new Warning(1100, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
@@ -79,7 +79,7 @@ public class TopWaveBuilder
 
     private void wave5()
     {
-        RoadBlock RB = new RoadBlock(1247, -600);
+        RoadBlock RB = new RoadBlock(1247);
         Warning WR = new Warning(1320, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
@@ -87,9 +87,9 @@ public class TopWaveBuilder
 
     private void wave6()
     {
-        RoadBlock RB2 = new RoadBlock(1037, -600);
+        RoadBlock RB2 = new RoadBlock(1037);
         Warning WR2 = new Warning(1100, 100);
-        RoadBlock RB = new RoadBlock(1247, -600);
+        RoadBlock RB = new RoadBlock(1247);
         Warning WR = new Warning(1320, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(RB2);

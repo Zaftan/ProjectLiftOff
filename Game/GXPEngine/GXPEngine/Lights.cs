@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-class Background :Sprite
+class Lights : Sprite
 {
     private float roadstart;
     private float scrollSpeed = 10f;
     private float spriteScrolled;
 
-    public Background() : base(Settings.ASSET_PATH + "Art/Road.png", addCollider: false)
+    public Lights() : base(Settings.ASSET_PATH + "Art/BackgroundLight.png", addCollider: false)
     {
         roadstart = this.height - 1080;
-        this.y+= scrollSpeed;
+        this.y += scrollSpeed;
     }
 
     void Update()
@@ -21,10 +21,10 @@ class Background :Sprite
         SetOrigin(-300, roadstart);
         spriteScrolled = roadstart -= scrollSpeed;
 
-        if(spriteScrolled <= -200)
+        if (spriteScrolled <= -200)
         {
             this.y = roadstart;
-            roadstart = this.height -1280;
+            roadstart = this.height - 1280;
         }
     }
 }
