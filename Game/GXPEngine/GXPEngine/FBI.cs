@@ -48,7 +48,7 @@ public class FBI : AnimationSprite
         }
 
         copDeath();
-        Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
+        //Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
 
     void OnCollision(GameObject obj)

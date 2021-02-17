@@ -19,6 +19,7 @@ using GXPEngine;
         void Update()
         {
         movement();
+        DestroyThis();
         }
 
         void OnCollision(GameObject obj)
@@ -33,6 +34,14 @@ using GXPEngine;
         {
         this.y+= speed;
         }
+
+    void DestroyThis()
+    {
+        if( this.y > game.height + 500)
+        {
+            LateDestroy();
+        }
+    }
 
 
     }

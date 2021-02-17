@@ -14,8 +14,8 @@ public class PlayerBullet : Sprite
     private float targetY = Input.mouseY;
 
     /*Sets the target coordinates for where the bullet is being shot from*/
-    private float shootPointX = MyGame.player.x - 15f ;
-    private float shootPointY = MyGame.player.y + 85f;
+    private float shootPointX = MyGame.player.x - 15f;
+    private float shootPointY = MyGame.player.y + 105f;
 
     private float dirX;
     private float dirY;

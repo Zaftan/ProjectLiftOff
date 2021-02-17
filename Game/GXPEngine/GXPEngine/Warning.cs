@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GXPEngine;
-   public class Warning : Sprite
+   public class Warning : AnimationSprite
     {
 
-       public Warning (float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Warning.png")
+       public Warning (float posX) : base(Settings.ASSET_PATH + "/Art/Warning.png",2,1)
         {
         this.x = posX;
-        this.y = posY;
+        this.y = 150f;
     }
 
     void OnCollision(GameObject obj)
@@ -18,6 +18,11 @@ using GXPEngine;
         {
             LateDestroy();
         }
+    }
+
+    void Update()
+    {
+        Animate();
     }
 
 

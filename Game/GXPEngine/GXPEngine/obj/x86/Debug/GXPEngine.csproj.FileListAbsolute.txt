@@ -34,3 +34,9 @@ C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEng
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Road.png
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SmallCop.png
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SpikeTrap.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\GameOver.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\InsertCoin.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpGun.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpLife.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpShield.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Warning.png

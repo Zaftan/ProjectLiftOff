@@ -48,7 +48,6 @@ public class Bike : AnimationSprite
         }
 
         copDeath();
-        Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
 
     void OnCollision(GameObject obj)
