@@ -9,11 +9,13 @@ public class MyGame : Game
 	static public WaveBuilder builder;
 	static public TopWaveBuilder topBuilder;
 
+
+	private Crosshair cs;// = new Crosshair();
 	public MyGame() : base(1920, 1080, false)
 	{
 		Border border = new Border();
 		Background background = new Background();
-		Crosshair cs = new Crosshair();
+		cs = new Crosshair();
 		HUD hud = new HUD();
 		player = new Player();
 		builder = new WaveBuilder();
@@ -25,11 +27,13 @@ public class MyGame : Game
 		AddChild(cs);
 		AddChild(player);
 		AddChild(hud);
+		SetChildIndex(cs, GetChildren().Count - 1);
 	}
 	void Update()
     {
         cheats();
 		builder.CountDown();
+		SetChildIndex(cs, GetChildren().Count - 1);
 		topBuilder.Update();
 		topBuilder.CountDown();
 	}

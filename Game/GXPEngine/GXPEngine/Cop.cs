@@ -8,7 +8,7 @@ public class Cop : AnimationSprite
 {
     //Fixes the attack speed.
     private float attackSpeed = 100;
-    private float copHealth = 50;
+    private float copHealth = 30;
     private float copSpeed;
 
     public float copX;
@@ -19,7 +19,7 @@ public class Cop : AnimationSprite
 
     EnemyBullet bullet;
 
-    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png",5 ,2 ,20 )
+    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 2, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
@@ -33,6 +33,8 @@ public class Cop : AnimationSprite
 
     void Update()
     {
+        Animate();
+
         if (shootTime % attackSpeed == 0)
         {
             attack();
@@ -58,7 +60,7 @@ public class Cop : AnimationSprite
 
     void attack()
     {
-        bullet = new EnemyBullet(this.x + 70f, this.y + 50f);
+        bullet = new EnemyBullet(this.x + 70f, this.y + 50f, 10);
 
         if (hasStoped)
         {
