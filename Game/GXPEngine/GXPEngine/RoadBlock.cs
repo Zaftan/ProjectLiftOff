@@ -6,14 +6,14 @@ using GXPEngine;
 
     public class RoadBlock : Sprite
     {
-        float speed = 3f;
+        float speed = 10f;
         static public float blockDamage = 30f;
 
 
-        public RoadBlock(float posX, float posY) : base(Settings.ASSET_PATH + "Art/SpikeTrap.png")
+        public RoadBlock(float posX) : base(Settings.ASSET_PATH + "Art/SpikeTrap.png")
         {
         this.x = posX;
-        this.y = posY;
+        this.y = - 1000;
     }
 
         void Update()
@@ -31,7 +31,7 @@ using GXPEngine;
 
     void movement()
         {
-        this.y+= 4f;
+        this.y+= speed;
         }
 
 
