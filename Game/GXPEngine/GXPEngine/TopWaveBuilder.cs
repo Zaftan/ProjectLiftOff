@@ -9,7 +9,6 @@ public class TopWaveBuilder
     static public float counter;
     private int waves = 1;
     public Random rnd;
-    int randon;
 
     public TopWaveBuilder()
     {
@@ -31,10 +30,11 @@ public class TopWaveBuilder
             case 3: wave3(); break;
             case 4: wave4(); break;
             case 5: wave5(); break;
+            case 6: wave6(); break;
 
-                
+
         }
-        waves = rnd.Next(1, 6);
+        waves = rnd.Next(1, 7);
     }
 
     public void CountDown()
@@ -83,5 +83,17 @@ public class TopWaveBuilder
         Warning WR = new Warning(1320, 100);
         Game.main.LateAddChild(RB);
         Game.main.LateAddChild(WR);
+    }
+
+    private void wave6()
+    {
+        RoadBlock RB2 = new RoadBlock(1037, -600);
+        Warning WR2 = new Warning(1100, 100);
+        RoadBlock RB = new RoadBlock(1247, -600);
+        Warning WR = new Warning(1320, 100);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
     }
 }

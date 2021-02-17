@@ -22,3 +22,15 @@ D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\A
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Road.png
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SmallCop.png
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SpikeTrap.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\BackgroundLight.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\BackgroundSmoke.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\BigCop.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Border.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Cop.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Crosshair.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\EnemyBullet.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Player.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PlayerBullet.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Road.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SmallCop.png
+C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\SpikeTrap.png

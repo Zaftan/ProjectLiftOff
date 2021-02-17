@@ -18,6 +18,7 @@ public class Player : AnimationSprite
     float speed = 4;
 
     bool canMoveLeft, canMoveRight = true;
+    bool isHit = false;
 
     public Player() : base(Settings.ASSET_PATH + "Art/Player.png", 8, 3, 20)
     {
@@ -42,13 +43,15 @@ public class Player : AnimationSprite
     {
         if (obj is EnemyBullet)
         {
-            //playerHealth = playerHealth - EnemyBullet.bulletDamage;
+            playerHealth = playerHealth - EnemyBullet.bulletDamage;
             obj.LateDestroy();
         }
 
         if (obj is RoadBlock)
         {
             playerHealth = playerHealth - RoadBlock.blockDamage;
+            obj.LateDestroy();
+             
         }
     }
 
@@ -86,10 +89,16 @@ public class Player : AnimationSprite
         }
 
         Collision cobj = MoveUntilCollision(posX, 0);
-        if(cobj != null &&  cobj.other is EnemyBullet)
+        if(cobj != null &&  cobj.other is EnemyBullet )
         {
             playerHealth = playerHealth - EnemyBullet.bulletDamage;
             cobj.other.LateDestroy();
+        }
+
+        if (cobj != null && cobj.other is RoadBlock)
+        {           
+            playerHealth = playerHealth - RoadBlock.blockDamage;
+            cobj.other.LateDestroy();         
         }
     }
 
