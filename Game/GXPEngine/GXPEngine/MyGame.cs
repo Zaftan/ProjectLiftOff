@@ -10,6 +10,7 @@ public class MyGame : Game
     static public Player player;
     static public WaveBuilder builder;
     static public TopWaveBuilder topBuilder;
+    public GunDude gd;
     Border border;
     Smoke smoke;
     Lights lights;
@@ -19,6 +20,7 @@ public class MyGame : Game
     GameOver gameOver;
     GameManager gm;
 
+
     List<GameObject> gameObjs = new List<GameObject>();
 
     public bool gameStarted = false;
@@ -27,6 +29,7 @@ public class MyGame : Game
 
     public MyGame() : base(1920, 1080, false)
     {
+        gd = new GunDude();
         gm = new GameManager();
         border = new Border();
         background = new Background();
@@ -46,8 +49,9 @@ public class MyGame : Game
         gameObjs.Add(smoke);
         gameObjs.Add(lights);
         gameObjs.Add(cs);
-        gameObjs.Add(hud);
+        gameObjs.Add(hud);      
         gameObjs.Add(player);
+        gameObjs.Add(gd);
 
         builder.WaveSpawner();
         topBuilder.WaveSpawner();

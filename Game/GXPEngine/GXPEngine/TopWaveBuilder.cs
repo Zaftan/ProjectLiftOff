@@ -40,7 +40,7 @@ public class TopWaveBuilder
 
 
         }
-        waves = rnd.Next(1, 8);
+        waves = rnd.Next(9, 9);
     }
 
     public void CountDown()
@@ -110,31 +110,35 @@ public class TopWaveBuilder
     {
         PowerUpLife pul = new PowerUpLife(435);
         Game.main.LateAddChild(pul);
+        PowerUpSign PS = new PowerUpSign(420);
+        Game.main.LateAddChild(PS);
     }
 
     private void wave8()
     {
         PowerUpGun pug = new PowerUpGun(435);
         Game.main.LateAddChild(pug);
+        PowerUpSign PS = new PowerUpSign(455);
+        Game.main.LateAddChild(PS);
     }
 
     private void wave9()
     {
         PowerUpShield pus = new PowerUpShield(650);
         Game.main.LateAddChild(pus);
+        PowerUpSign PS = new PowerUpSign(665);
+        Game.main.LateAddChild(PS);
     }
 
     private void wave10()
     {
         PowerUpShield pus = new PowerUpShield(435);
-        Game.main.LateAddChild(pus);
         PowerUpLife pul2 = new PowerUpLife(650);
+        PowerUpSign PS = new PowerUpSign(455);
+        PowerUpSign PS2 = new PowerUpSign(665);
         Game.main.LateAddChild(pul2);
-/*        PowerUpLife pul3 = new PowerUpLife(865);
-        Game.main.LateAddChild(pul3);
-        PowerUpLife pul4 = new PowerUpLife(1080);
-        Game.main.LateAddChild(pul4);
-        PowerUpLife pul5 = new PowerUpLife(1295);
-        Game.main.LateAddChild(pul5);*/
+        Game.main.LateAddChild(PS2);
+        Game.main.LateAddChild(PS);
+        Game.main.LateAddChild(pus);
     }
 }

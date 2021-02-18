@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-class EnemyBullet : Sprite
+class EnemyBullet : AnimationSprite
 {
     static public float bulletDamage;
     private float bulletSpeed = 3f;
@@ -16,10 +16,11 @@ class EnemyBullet : Sprite
     private float dirX;
     private float dirY;
 
-    public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png")
+    public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png",2,1,255)
     {
         this.x = shootPointX;
         this.y = shootPointY;
+        SetCycle(0,1);
 
         dirX = targetX - shootPointX;
         dirY = targetY - shootPointY;
@@ -33,6 +34,8 @@ class EnemyBullet : Sprite
 
     void Update()
     {
+        SetCycle(1,2);
+        Animate();
         BulletTarget();
         BulletDestroy();
     }

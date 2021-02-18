@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-public class PlayerBullet : Sprite
+public class PlayerBullet : AnimationSprite
 {
     static public float bulletDamage = 10;
     private float bulletSpeed = 10f;
@@ -20,7 +20,7 @@ public class PlayerBullet : Sprite
     private float dirX;
     private float dirY;
 
-    public PlayerBullet() : base(Settings.ASSET_PATH + "Art/PlayerBullet.png")
+    public PlayerBullet() : base(Settings.ASSET_PATH + "Art/PlayerBullet.png",2, 1, 255)
     {
         this.x = shootPointX;
         this.y = shootPointY;
@@ -32,10 +32,13 @@ public class PlayerBullet : Sprite
 
         dirX /= mag;
         dirY /= mag;
+
+        SetCycle(0,1);
     }
 
     void Update()
     {
+        SetCycle(1, 2);
         BulletTarget();
         BulletDestroy();
     }        
