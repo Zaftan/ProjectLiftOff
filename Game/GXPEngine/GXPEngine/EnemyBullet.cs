@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-class EnemyBullet : Sprite
+class EnemyBullet : AnimationSprite
 {
-    static public float bulletDamage = 5;
+    static public float bulletDamage;
     private float bulletSpeed = 3f;
 
     /*Sets the target coordinates for where the bullet is being shot at*/
@@ -16,15 +16,22 @@ class EnemyBullet : Sprite
     private float dirX;
     private float dirY;
 
-    public EnemyBullet(float shootPointX, float shootPointY) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png")
+    public bool hit = false;
+
+    Sound HitPlayer = new Sound(Settings.ASSET_PATH + "SFX/bulletHitPlayer.mp3");
+    Sound HitPlayerShield = new Sound(Settings.ASSET_PATH + "SFX/bulletHitShield.mp3");
+
+    public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png",2,1,255)
     {
         this.x = shootPointX;
         this.y = shootPointY;
+        SetCycle(0,1);
 
         dirX = targetX - shootPointX;
         dirY = targetY - shootPointY;
 
         float mag = Mathf.Sqrt(dirX * dirX + dirY * dirY);
+        bulletDamage = bulletDmg;
 
         dirX /= mag;
         dirY /= mag;
@@ -32,6 +39,8 @@ class EnemyBullet : Sprite
 
     void Update()
     {
+        SetCycle(1,2);
+        Animate();
         BulletTarget();
         BulletDestroy();
     }
@@ -41,6 +50,7 @@ class EnemyBullet : Sprite
     {
         x += dirX * bulletSpeed;
         y += dirY * bulletSpeed;
+        //MoveUntilCollision(dirX * bulletSpeed, dirY * bulletSpeed);
     }
 
     //Destroys the bullet when getting out of screen.
@@ -56,7 +66,16 @@ class EnemyBullet : Sprite
     {
         if (obj is Player)
         {
+            
             LateDestroy();
+            if (MyGame.player.Invulnerability)
+            {
+                HitPlayerShield.Play(volume: 0.2f);
+            }
+            else
+            {
+                HitPlayer.Play(volume: 0.2f);
+            }
         }
 
         if (obj is Border)
@@ -67,7 +86,6 @@ class EnemyBullet : Sprite
         if (obj is PlayerBullet)
         {
             LateDestroy();
-
         }
     }
 }

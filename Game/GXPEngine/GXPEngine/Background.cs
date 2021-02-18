@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-class Background : AnimationSprite
+class Background : Sprite
 {
     private float roadstart;
-    private float scrollSpeed = 15f;
+    private float scrollSpeed = 10f;
     private float spriteScrolled;
 
-    public Background() : base(Settings.ASSET_PATH + "Art/Road.png", 1, 1, addCollider: false)
+    public Background() : base(Settings.ASSET_PATH + "Art/Road.png", addCollider: false)
     {
         roadstart = this.height - 1080;
         this.y+= scrollSpeed;
