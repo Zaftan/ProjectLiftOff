@@ -8,23 +8,34 @@ using System.Drawing;
 public class HUD : Canvas
 {
     Font font = new Font("Arial", 18);
+    Font font2 = new Font("Arial", 45);
     Pen pen = new Pen(Brushes.DarkRed, 8);
-    static public float SCORE = 0;
+    static public float SCORE;
+    
 
-    public HUD() : base(Game.main.width, 400, addCollider: false)
+
+
+    public HUD() : base(Game.main.width, Game.main.height, addCollider: false)
     {
         //
     }
     void Update()
     {
+        string score2 = "Score: " + SCORE;
         showHud();
+        if (GameManager.gameRunning == false)
+        {
+            graphics.Clear(Color.Empty);
+            graphics.DrawString(score2, font2, Brushes.White, 850, 750);
+
+        }
     }
 
     //Draws the strings onto the screen.
     void showHud()
     {
         string score = "Score: " + SCORE;
-        string health = ""+MyGame.player.getHealth();
+        string health = "" + MyGame.player.getHealth();
         graphics.Clear(Color.Empty);
         graphics.DrawRectangle(pen, 400, 100, 200, 30);
         graphics.FillRectangle(Brushes.Black, 400, 100, 200, 30);

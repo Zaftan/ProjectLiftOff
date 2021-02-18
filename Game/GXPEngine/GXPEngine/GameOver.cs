@@ -7,7 +7,7 @@ using GXPEngine;
 public class GameOver : Sprite
 {
 
-    public GameOver() : base(Settings.ASSET_PATH + "Art/GameOver.png")
+    public GameOver() : base(Settings.ASSET_PATH + "Art/GameOver.png", addCollider: false)
     {
         //
     }

@@ -7,7 +7,7 @@ using GXPEngine;
 public class StartScreen : Sprite
 {
 
-    public StartScreen() : base(Settings.ASSET_PATH + "Art/InsertCoin.png")
+    public StartScreen() : base(Settings.ASSET_PATH + "Art/InsertCoin.png", addCollider: false)
     {
         //
     }

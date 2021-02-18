@@ -35,6 +35,9 @@ public class Bike : AnimationSprite
 
     void Update()
     {
+        if(GameManager.gameRunning)
+        {
+
         Animate();
 
         if (shootTime % attackSpeed == 0)
@@ -50,6 +53,8 @@ public class Bike : AnimationSprite
         }
 
         copDeath();
+
+        }
     }
 
     void OnCollision(GameObject obj)

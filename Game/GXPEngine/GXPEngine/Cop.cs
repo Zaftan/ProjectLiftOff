@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GXPEngine;
-
 public class Cop : AnimationSprite
 {
     //Fixes the attack speed.
@@ -34,7 +33,9 @@ public class Cop : AnimationSprite
 
     void Update()
     {
-        Animate();
+        if(GameManager.gameRunning)
+        {
+            Animate();
 
         if (shootTime % attackSpeed == 0)
         {
@@ -49,6 +50,7 @@ public class Cop : AnimationSprite
         }
         
         copDeath();
+        }
     }
 
     void OnCollision(GameObject obj)

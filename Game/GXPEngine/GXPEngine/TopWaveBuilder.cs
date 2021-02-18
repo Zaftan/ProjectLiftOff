@@ -7,7 +7,7 @@ using GXPEngine;
 public class TopWaveBuilder
 {
     static public float counter;
-    private int waves = 10;
+    private int waves;
     public Random rnd;
 
     public TopWaveBuilder()
@@ -16,8 +16,11 @@ public class TopWaveBuilder
     }
 
     public void Update()
-    {
-        counter++;
+    {          
+        if(GameManager.gameRunning)
+        {
+            counter++;
+        }
     }
 
     public void WaveSpawner()
@@ -42,9 +45,12 @@ public class TopWaveBuilder
 
     public void CountDown()
     {
-        if (counter % 600 == 0)
-        {
-            WaveSpawner();
+        if (GameManager.gameRunning) 
+        { 
+            if (counter % 600 == 0)
+            {
+                WaveSpawner();
+            }
         }
     }
 

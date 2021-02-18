@@ -17,6 +17,7 @@ public class MyGame : Game
     Background background;
     StartScreen startScreen;
     GameOver gameOver;
+    GameManager gm;
 
     List<GameObject> gameObjs = new List<GameObject>();
 
@@ -26,6 +27,7 @@ public class MyGame : Game
 
     public MyGame() : base(1920, 1080, false)
     {
+        gm = new GameManager();
         border = new Border();
         background = new Background();
         smoke = new Smoke();
@@ -74,9 +76,10 @@ public class MyGame : Game
         SceneSwitcher(currentScene);
 
         builder.CountDown();
-        SetChildIndex(smoke, GetChildren().Count - 4);
-        SetChildIndex(lights, GetChildren().Count - 3);
-        SetChildIndex(cs, GetChildren().Count - 2);
+        SetChildIndex(smoke, GetChildren().Count - 6);
+        SetChildIndex(lights, GetChildren().Count - 5);
+        SetChildIndex(cs, GetChildren().Count - 4);
+        SetChildIndex(startScreen, GetChildren().Count - 2);
         SetChildIndex(border, GetChildren().Count - 1);
         SetChildIndex(hud, GetChildren().Count - 0);
         topBuilder.Update();
@@ -95,22 +98,26 @@ public class MyGame : Game
                 }
                 hud.LateRemove();
             break;
+
             case 2:
                 startScreen.LateRemove();
+                GameManager.gameRunning = true;
 
-                foreach(GameObject go in gameObjs)
+                foreach (GameObject go in gameObjs)
                 {
                     if(!Game.main.HasChild(go))
                     { 
-                        AddChild(go);
+                        AddChild(go);                     
                     }
                 }
 
             break;
             case 3:
+                GameManager.gameRunning = false;
                 if (!Game.main.HasChild(gameOver))
                 {
                     AddChild(gameOver);
+                    SetChildIndex(gameOver, GetChildren().Count - 2);
                 }
                 foreach (GameObject go in gameObjs)
                 {
