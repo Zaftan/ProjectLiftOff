@@ -69,11 +69,11 @@ public class Sheriff : AnimationSprite
 
     void attack()
     {
-        bullet = new EnemyBullet(this.x + 70f, this.y + 50f, 10);
-        bullet2 = new EnemyBullet(this.x + 70f + spreadRange, this.y + 50f, 10);
-        bullet3 = new EnemyBullet(this.x + 70f + spreadRange + 40, this.y + 50f, 10);
-        bullet4 = new EnemyBullet(this.x + 70f + spreadRange + 80, this.y + 50f, 10);
-        bullet5 = new EnemyBullet(this.x + 70f + spreadRange + 120, this.y + 50f, 10);
+        bullet = new EnemyBullet(this.x + 70f + spreadRange - 80, this.y + 50f, 10);
+        bullet2 = new EnemyBullet(this.x + 70f + spreadRange - 40, this.y + 50f, 10);
+        bullet3 = new EnemyBullet(this.x + 70f + spreadRange, this.y + 50f, 10);
+        bullet4 = new EnemyBullet(this.x + 70f + spreadRange + 40, this.y + 50f, 10);
+        bullet5 = new EnemyBullet(this.x + 70f + spreadRange + 80, this.y + 50f, 10);
 
         if (hasStoped)
         {

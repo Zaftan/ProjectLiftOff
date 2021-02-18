@@ -74,3 +74,29 @@ C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEng
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\shieldPickup.mp3
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\tirePop.mp3
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\warningAlert.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\GunDude.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpGun2.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpGunSprite.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpLifeSprite.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpShieldSprite.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpSign.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Sherif.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\bossEntersStage.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\bulletHitEnemy.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\bulletHitPlayer.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\bulletHitShield.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\desertAmbience.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\drivingSound.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\gunshotEnemy.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\gunshotPlayer.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\healthPickUp.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\introScreenTrack.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\littleTownRobbers_LOOPABLE.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\machineGunPickup.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\machineGunPlayer.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\machineGunSheriff.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\policeSirens.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\sheriffLaugh.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\shieldPickup.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\tirePop.mp3
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\SFX\warningAlert.mp3
