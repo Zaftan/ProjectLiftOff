@@ -6,8 +6,8 @@ using GXPEngine;
 public class Sheriff : AnimationSprite
 {
     //Fixes the attack speed.
-    private float attackSpeed = 50;
-    private float sheriffHealth = 300;
+    private float attackSpeed = 65;
+    private float sheriffHealth = 150;
     private float sheriffSpeed;
 
     public float copX;
@@ -69,11 +69,11 @@ public class Sheriff : AnimationSprite
 
     void attack()
     {
-        bullet = new EnemyBullet(this.x + 70f + spreadRange - 80, this.y + 50f, 10);
-        bullet2 = new EnemyBullet(this.x + 70f + spreadRange - 40, this.y + 50f, 10);
-        bullet3 = new EnemyBullet(this.x + 70f + spreadRange, this.y + 50f, 10);
-        bullet4 = new EnemyBullet(this.x + 70f + spreadRange + 40, this.y + 50f, 10);
-        bullet5 = new EnemyBullet(this.x + 70f + spreadRange + 80, this.y + 50f, 10);
+        bullet = new EnemyBullet(this.x + 70f + spreadRange - 80, this.y + 50f, 5);
+        bullet2 = new EnemyBullet(this.x + 70f + spreadRange - 40, this.y + 50f, 5);
+        bullet3 = new EnemyBullet(this.x + 70f + spreadRange, this.y + 50f, 5);
+        bullet4 = new EnemyBullet(this.x + 70f + spreadRange + 40, this.y + 50f, 5);
+        bullet5 = new EnemyBullet(this.x + 70f + spreadRange + 80, this.y + 50f, 5);
 
         if (hasStoped)
         {

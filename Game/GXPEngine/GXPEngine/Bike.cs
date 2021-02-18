@@ -7,7 +7,7 @@ using GXPEngine;
 public class Bike : AnimationSprite
 {
     //Fixes the attack speed.
-    private float attackSpeed = 100;
+    private float attackSpeed = 35;
     private float bikeHealth = 10;
     private float fbiSpeed;
 
@@ -42,22 +42,22 @@ public class Bike : AnimationSprite
         if(GameManager.gameRunning)
         {
 
-        Animate();
+            Animate();
 
-        if (shootTime % attackSpeed == 0)
-        {
-                shot.Play(volume: 0.15f);
-                attack();
-        }
-        shootTime++;
+            if (shootTime % attackSpeed == 0)
+            {
+                    shot.Play(volume: 0.15f);
+                    attack();
+            }
+            shootTime++;
 
-        if (this.y >= 800)
-        {
-            this.y -= fbiSpeed;
-            hasStoped = true;
-        }
+            if (this.y >= 800)
+            {
+                this.y -= fbiSpeed;
+                hasStoped = true;
+            }
 
-        copDeath();
+            copDeath();
 
         }
     }

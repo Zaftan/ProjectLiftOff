@@ -125,15 +125,15 @@ public class WaveBuilder
 
     private void wave9()
     {
-        Bike bike = new Bike(440f, 1200f);
+        Cop cop = new Cop(440f, 1200f);
         FBI fbi = new FBI(650f, 1200f);
-        Cop cop = new Cop(860f, 1200f);
+        Bike bike = new Bike(860f, 1200f);
         FBI fbi2 = new FBI(1070f, 1200f);
-        Bike bike2 = new Bike(1290f, 1200f);
+        Cop cop2 = new Cop(1290f, 1200f);
         Game.main.LateAddChild(fbi);
         Game.main.LateAddChild(bike);
         Game.main.LateAddChild(cop);
-        Game.main.LateAddChild(bike2);
+        Game.main.LateAddChild(cop2);
         Game.main.LateAddChild(fbi2);
         remainingEnemiesIntheWaves = 5;
     }

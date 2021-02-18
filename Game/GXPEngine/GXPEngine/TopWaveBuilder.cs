@@ -37,10 +37,15 @@ public class TopWaveBuilder
             case 8: wave8(); break;
             case 9: wave9(); break;
             case 10: wave10(); break;
-
-
+            case 11: wave11(); break;
+            case 12: wave12(); break;
+            case 13: wave13(); break;
+            case 14: wave14(); break;
+            case 15: wave15(); break;
+            case 16: wave16(); break;
+            case 17: wave17(); break;
         }
-        waves = rnd.Next(9, 9);
+        waves = rnd.Next(1, 17);
     }
 
     public void CountDown()
@@ -96,8 +101,8 @@ public class TopWaveBuilder
 
     private void wave6()
     {
-        RoadBlock RB2 = new RoadBlock(1037);
-        Warning WR2 = new Warning(1060);
+        RoadBlock RB2 = new RoadBlock(387);
+        Warning WR2 = new Warning(410);
         RoadBlock RB = new RoadBlock(1247);
         Warning WR = new Warning(1280);
         Game.main.LateAddChild(RB);
@@ -108,37 +113,140 @@ public class TopWaveBuilder
 
     private void wave7()
     {
-        PowerUpLife pul = new PowerUpLife(435);
-        Game.main.LateAddChild(pul);
-        PowerUpSign PS = new PowerUpSign(420);
-        Game.main.LateAddChild(PS);
+        RoadBlock RB2 = new RoadBlock(603);
+        Warning WR2 = new Warning(630);
+        RoadBlock RB = new RoadBlock(1037);
+        Warning WR = new Warning(1060);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
     }
 
     private void wave8()
     {
-        PowerUpGun pug = new PowerUpGun(435);
-        Game.main.LateAddChild(pug);
-        PowerUpSign PS = new PowerUpSign(455);
+        RoadBlock RB2 = new RoadBlock(387);
+        Warning WR2 = new Warning(410);
+        RoadBlock RB = new RoadBlock(821);
+        Warning WR = new Warning(850);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+
+        PowerUpLife pul = new PowerUpLife(603);
+        Game.main.LateAddChild(pul);
+        PowerUpSign PS = new PowerUpSign(630);
         Game.main.LateAddChild(PS);
     }
 
     private void wave9()
     {
-        PowerUpShield pus = new PowerUpShield(650);
-        Game.main.LateAddChild(pus);
-        PowerUpSign PS = new PowerUpSign(665);
+        RoadBlock RB2 = new RoadBlock(821);
+        Warning WR2 = new Warning(850);
+        RoadBlock RB = new RoadBlock(1247);
+        Warning WR = new Warning(1280);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+
+        PowerUpGun pug = new PowerUpGun(1037);
+        Game.main.LateAddChild(pug);
+        PowerUpSign PS = new PowerUpSign(1060);
         Game.main.LateAddChild(PS);
     }
 
     private void wave10()
     {
-        PowerUpShield pus = new PowerUpShield(435);
-        PowerUpLife pul2 = new PowerUpLife(650);
-        PowerUpSign PS = new PowerUpSign(455);
-        PowerUpSign PS2 = new PowerUpSign(665);
-        Game.main.LateAddChild(pul2);
-        Game.main.LateAddChild(PS2);
+        RoadBlock RB2 = new RoadBlock(603);
+        Warning WR2 = new Warning(630);
+        RoadBlock RB = new RoadBlock(821);
+        Warning WR = new Warning(850);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+    }
+
+    private void wave11()
+    {
+        RoadBlock RB2 = new RoadBlock(821);
+        Warning WR2 = new Warning(850);
+        RoadBlock RB = new RoadBlock(1037);
+        Warning WR = new Warning(1060);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+    }
+
+    private void wave12()
+    {
+        RoadBlock RB2 = new RoadBlock(387);
+        Warning WR2 = new Warning(410);
+        RoadBlock RB = new RoadBlock(603);
+        Warning WR = new Warning(630);
+        RoadBlock RB3 = new RoadBlock(821);
+        Warning WR3 = new Warning(850);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+        Game.main.LateAddChild(RB3);
+        Game.main.LateAddChild(WR3);
+    }
+
+    private void wave13()
+    {
+        RoadBlock RB2 = new RoadBlock(821);
+        Warning WR2 = new Warning(850);
+        RoadBlock RB = new RoadBlock(1037);
+        Warning WR = new Warning(1060);
+        RoadBlock RB3 = new RoadBlock(1247);
+        Warning WR3 = new Warning(1280);
+        Game.main.LateAddChild(RB);
+        Game.main.LateAddChild(RB2);
+        Game.main.LateAddChild(WR);
+        Game.main.LateAddChild(WR2);
+        Game.main.LateAddChild(RB3);
+        Game.main.LateAddChild(WR3);
+    }
+
+    private void wave14()
+    {
+        PowerUpLife pul = new PowerUpLife(821);
+        Game.main.LateAddChild(pul);
+        PowerUpSign PS = new PowerUpSign(850);
         Game.main.LateAddChild(PS);
+    }
+
+    private void wave15()
+    {
+        PowerUpGun pug = new PowerUpGun(387);
+        Game.main.LateAddChild(pug);
+        PowerUpSign PS = new PowerUpSign(410);
+        Game.main.LateAddChild(PS);
+    }
+
+    private void wave16()
+    {
+        PowerUpShield pus = new PowerUpShield(1247);
         Game.main.LateAddChild(pus);
+        PowerUpSign PS = new PowerUpSign(1280);
+        Game.main.LateAddChild(PS);
+    }
+
+    private void wave17()
+    {
+        PowerUpLife pul = new PowerUpLife(603);
+        Game.main.LateAddChild(pul);
+        PowerUpSign PS = new PowerUpSign(630);
+        Game.main.LateAddChild(PS);
+
+        PowerUpShield pus = new PowerUpShield(1037);
+        Game.main.LateAddChild(pus);
+        PowerUpSign PS2 = new PowerUpSign(1060);
+        Game.main.LateAddChild(PS2);
     }
 }
