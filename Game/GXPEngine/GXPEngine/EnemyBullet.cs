@@ -16,6 +16,8 @@ class EnemyBullet : AnimationSprite
     private float dirX;
     private float dirY;
 
+    public bool hit = false;
+
     public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png",2,1,255)
     {
         this.x = shootPointX;

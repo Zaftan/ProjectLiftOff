@@ -54,9 +54,14 @@ public class Player : AnimationSprite
     {
         if (obj is EnemyBullet)
         {
-            playerHealth = playerHealth - EnemyBullet.bulletDamage;
-            obj.LateDestroy();
-            SetCycle(20, 2, 255);
+            EnemyBullet eb = (EnemyBullet) obj;
+            if (!eb.hit)
+            {
+                playerHealth = playerHealth - EnemyBullet.bulletDamage;
+                obj.LateDestroy();
+                eb.hit = true;
+                SetCycle(20, 2, 255);
+            }
         }
 
         if (obj is RoadBlock)
@@ -95,9 +100,15 @@ public class Player : AnimationSprite
 
         if (cobj != null && cobj.other is EnemyBullet)
         {
-            playerHealth = playerHealth - EnemyBullet.bulletDamage;
-            cobj.other.LateDestroy();
-            SetCycle(20, 2, 255);
+
+            EnemyBullet eb = (EnemyBullet) cobj.other;
+            if (!eb.hit)
+            {
+                playerHealth = playerHealth - EnemyBullet.bulletDamage;
+                cobj.other.LateDestroy();
+                eb.hit = true;
+                SetCycle(20, 2, 255);
+            }
         }
 
         if (cobj != null && cobj.other is RoadBlock)
