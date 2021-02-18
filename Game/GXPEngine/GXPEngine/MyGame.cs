@@ -11,6 +11,9 @@ public class MyGame : Game
     static public WaveBuilder builder;
     static public TopWaveBuilder topBuilder;
     public GunDude gd;
+    static Sound _music;
+    Sound _music2 = new Sound(Settings.ASSET_PATH + "SFX/desertAmbience.mp3", looping: true);
+    SoundChannel _musicChannel, _musicChannel2;
     Border border;
     Smoke smoke;
     Lights lights;
@@ -96,9 +99,12 @@ public class MyGame : Game
         switch (scene)
         {
             case 1:
+                
                 if (!Game.main.HasChild(startScreen))
                 {
-                    AddChild(startScreen);
+                    AddChild(startScreen);               
+                    _music = new Sound(Settings.ASSET_PATH + "SFX/introScreenTrack.mp3", looping: true);
+                    PlayMusic();
                 }
                 hud.LateRemove();
             break;
@@ -110,7 +116,11 @@ public class MyGame : Game
                 foreach (GameObject go in gameObjs)
                 {
                     if(!Game.main.HasChild(go))
-                    { 
+                    {
+                        stopMusic();
+                        _music = new Sound(Settings.ASSET_PATH + "SFX/littleTownRobbers_LOOPABLE.mp3", looping: true);
+                        _musicChannel2 = _music2.Play(volume: 0.2f);
+                        PlayMusic();
                         AddChild(go);                     
                     }
                 }
@@ -120,7 +130,7 @@ public class MyGame : Game
                 GameManager.gameRunning = false;
                 if (!Game.main.HasChild(gameOver))
                 {
-                    AddChild(gameOver);
+                    AddChild(gameOver);                  
                     SetChildIndex(gameOver, GetChildren().Count - 2);
                 }
                 foreach (GameObject go in gameObjs)
@@ -130,7 +140,6 @@ public class MyGame : Game
                 currentScene = 4;
             break;
         }
-
     }
 
     private static void cheats()
@@ -144,6 +153,19 @@ public class MyGame : Game
         {
             player.playerHealth = -1000;
         }
+    }
+
+    void PlayMusic()
+    {
+        if (_music != null)
+        {
+            _musicChannel = _music.Play(false, 0, 0.4f);
+        }
+    }
+
+    public void stopMusic()
+    {
+        _musicChannel.Stop();
     }
 
     static void Main()

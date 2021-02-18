@@ -7,7 +7,8 @@ using GXPEngine;
     {
         public float healthRestored = 50;
         float speed = 3f;
-       public PowerUpLife(float posX) : base(Settings.ASSET_PATH + "Art/PowerUpLife.png")
+
+    public PowerUpLife(float posX) : base(Settings.ASSET_PATH + "Art/PowerUpLife.png")
         {
         this.x = posX;
         this.y = -600;

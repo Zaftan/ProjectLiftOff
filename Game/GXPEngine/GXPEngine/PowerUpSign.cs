@@ -5,9 +5,10 @@ using System.Text;
 using GXPEngine;
 public class PowerUpSign : AnimationSprite
 {
-
+    Sound WarningSound = new Sound(Settings.ASSET_PATH + "SFX/warningAlert.mp3");
     public PowerUpSign(float posX) : base(Settings.ASSET_PATH + "/Art/PowerUpSign.png", 2, 1)
     {
+        WarningSound.Play(volume: 0.3f);
         this.x = posX;
         this.y = 150f;
     }

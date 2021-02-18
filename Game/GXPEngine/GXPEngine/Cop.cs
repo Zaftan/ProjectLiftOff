@@ -16,12 +16,16 @@ public class Cop : AnimationSprite
 
     bool hasStoped = false;
 
+    Sound shot = new Sound(Settings.ASSET_PATH + "SFX/gunshotEnemy.mp3");
+    Sound policeSirens = new Sound(Settings.ASSET_PATH + "SFX/policeSirens.mp3");
+
     EnemyBullet bullet;
 
     public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 3, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
+        policeSirens.Play(volume: 0.15f);
         Random rnd = new Random();
         copSpeed = rnd.Next(4, 16);
         this.x = posX;
@@ -39,6 +43,7 @@ public class Cop : AnimationSprite
 
         if (shootTime % attackSpeed == 0)
         {
+            shot.Play(volume: 0.15f);
             attack();
         }
         shootTime++;

@@ -22,7 +22,13 @@ public class Player : AnimationSprite
     public float curHP;
 
     bool canMoveLeft, canMoveRight = true;
-    bool Invulnerability = false;
+    public bool Invulnerability = false;
+
+    Sound shot = new Sound(Settings.ASSET_PATH + "SFX/gunshotPlayer.mp3");
+    Sound LifePickUp = new Sound(Settings.ASSET_PATH + "SFX/healthPickUp.mp3");
+    Sound ShieldPickUp = new Sound(Settings.ASSET_PATH + "SFX/shieldPickup.mp3");
+    Sound GunPickUp = new Sound(Settings.ASSET_PATH + "SFX/machineGunPickup.mp3");
+    Sound TirePop = new Sound(Settings.ASSET_PATH + "SFX/tirePop.mp3");
 
     public Player() : base(Settings.ASSET_PATH + "Art/Player.png", 8, 3, 20)
     {
@@ -39,7 +45,7 @@ public class Player : AnimationSprite
         Health();
         //Fixes the attack speed.
         if (shootTime % attackSpeed == 0)
-        {
+        {          
             attack();
         }
         shootTime++;
@@ -66,6 +72,7 @@ public class Player : AnimationSprite
 
         if (obj is RoadBlock)
         {
+            TirePop.Play(volume: 0.3f);
             playerHealth = playerHealth - RoadBlock.blockDamage;
             obj.LateDestroy();
             SetCycle(20, 2, 255);
@@ -73,12 +80,16 @@ public class Player : AnimationSprite
 
         if (obj is PowerUpGun)
         {
+            GunPickUp.Play(volume: 0.3f);
             timeStart = Time.time;
+            PowerUpAnimationG pag = new PowerUpAnimationG();
+            Game.main.LateAddChild(pag);
             obj.LateDestroy();
         }
 
         if (obj is PowerUpShield)
         {
+            ShieldPickUp.Play(volume: 0.3f);
             PowerUpAnimationS pas = new PowerUpAnimationS();
             Game.main.LateAddChild(pas);
             curHP = playerHealth;
@@ -89,6 +100,7 @@ public class Player : AnimationSprite
 
         if (obj is PowerUpLife)
         {
+            LifePickUp.Play(volume: 0.3f);
             PowerUpAnimationL pal = new PowerUpAnimationL();
             Game.main.LateAddChild(pal);
         }
@@ -113,6 +125,7 @@ public class Player : AnimationSprite
 
         if (cobj != null && cobj.other is RoadBlock)
         {
+            TirePop.Play(volume: 0.3f);
             playerHealth = playerHealth - RoadBlock.blockDamage;
             cobj.other.LateDestroy();
             SetCycle(20, 2, 255);
@@ -120,13 +133,17 @@ public class Player : AnimationSprite
 
         if (cobj != null && cobj.other is PowerUpGun)
         {
+            GunPickUp.Play(volume: 0.3f);
             timeStart = Time.time;
+            PowerUpAnimationG pag = new PowerUpAnimationG();
+            Game.main.LateAddChild(pag);
             attackSpeed = 10;
             cobj.other.LateDestroy();
         }
 
         if (cobj != null && cobj.other is PowerUpLife)
         {
+            LifePickUp.Play(volume: 0.3f);
             curHP = curHP + 50;
             playerHealth = playerHealth + 50;
             PowerUpAnimationL pal = new PowerUpAnimationL();
@@ -136,6 +153,7 @@ public class Player : AnimationSprite
 
         if (cobj != null && cobj.other is PowerUpShield)
         {
+            ShieldPickUp.Play(volume: 0.3f);
             curHP = playerHealth;
             timeStart2 = Time.time;
             Invulnerability = true;
@@ -205,7 +223,8 @@ public class Player : AnimationSprite
         if (Input.mouseY > Game.main.height / 2 + 100)
         {           
             if (Input.GetMouseButton(0))
-            {              
+            {
+                shot.Play(volume: 0.3f);
                 Game.main.AddChild(bullet);
                 //new Sound(Settings.ASSET_PATH + "SFX/Sans.mp3").Play();                            
             }

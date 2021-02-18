@@ -17,12 +17,16 @@ public class Bike : AnimationSprite
 
     bool hasStoped = false;
 
+    Sound shot = new Sound(Settings.ASSET_PATH + "SFX/gunshotEnemy.mp3");
+    Sound policeSirens = new Sound(Settings.ASSET_PATH + "SFX/policeSirens.mp3");
+
     EnemyBullet bullet;
 
     public Bike(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/SmallCop.png", 6, 2, 20)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
+        policeSirens.Play(volume: 0.15f);
         Random rnd = new Random();
         fbiSpeed = rnd.Next(4, 16);
         this.x = posX;
@@ -42,7 +46,8 @@ public class Bike : AnimationSprite
 
         if (shootTime % attackSpeed == 0)
         {
-            attack();
+                shot.Play(volume: 0.15f);
+                attack();
         }
         shootTime++;
 

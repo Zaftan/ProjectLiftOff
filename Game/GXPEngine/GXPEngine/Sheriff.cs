@@ -19,10 +19,15 @@ public class Sheriff : AnimationSprite
     float spreadRange = 50f;
     EnemyBullet bullet, bullet2, bullet3, bullet4, bullet5;
 
+    Sound Entry = new Sound(Settings.ASSET_PATH + "SFX/bossEntersStage.mp3");
+    Sound Laugh = new Sound(Settings.ASSET_PATH + "SFX/sheriffLaugh.mp3");
+
     public Sheriff(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Sheriff.png", 6, 2, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
+        Entry.Play(volume:0.8f);
+        Laugh.Play(volume: 0.6f);
         Random rnd = new Random();
         sheriffSpeed = rnd.Next(4, 16);
         this.x = posX;

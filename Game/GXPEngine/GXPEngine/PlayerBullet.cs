@@ -20,6 +20,8 @@ public class PlayerBullet : AnimationSprite
     private float dirX;
     private float dirY;
 
+    Sound HitEnemy = new Sound(Settings.ASSET_PATH + "SFX/bulletHitEnemy.mp3");
+
     public PlayerBullet() : base(Settings.ASSET_PATH + "Art/PlayerBullet.png",2, 1, 255)
     {
         this.x = shootPointX;
@@ -63,21 +65,25 @@ public class PlayerBullet : AnimationSprite
     {
         if (obj is Cop)
         {
+            HitEnemy.Play(volume: 0.1f);
             LateDestroy();
         }
 
         if (obj is FBI)
         {
+            HitEnemy.Play(volume: 0.1f);
             LateDestroy();
         }
         
         if (obj is Bike)
         {
+            HitEnemy.Play(volume: 0.1f);
             LateDestroy();
         }
 
         if (obj is Sheriff)
         {
+            HitEnemy.Play(volume: 0.1f);
             LateDestroy();
         }
 

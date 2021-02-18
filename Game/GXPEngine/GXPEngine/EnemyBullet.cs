@@ -18,6 +18,9 @@ class EnemyBullet : AnimationSprite
 
     public bool hit = false;
 
+    Sound HitPlayer = new Sound(Settings.ASSET_PATH + "SFX/bulletHitPlayer.mp3");
+    Sound HitPlayerShield = new Sound(Settings.ASSET_PATH + "SFX/bulletHitShield.mp3");
+
     public EnemyBullet(float shootPointX, float shootPointY, float bulletDmg) : base(Settings.ASSET_PATH + "Art/EnemyBullet.png",2,1,255)
     {
         this.x = shootPointX;
@@ -63,7 +66,16 @@ class EnemyBullet : AnimationSprite
     {
         if (obj is Player)
         {
+            
             LateDestroy();
+            if (MyGame.player.Invulnerability)
+            {
+                HitPlayerShield.Play(volume: 0.2f);
+            }
+            else
+            {
+                HitPlayer.Play(volume: 0.2f);
+            }
         }
 
         if (obj is Border)
