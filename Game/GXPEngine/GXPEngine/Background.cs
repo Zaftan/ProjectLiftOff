@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using GXPEngine;
 
-class Background :Sprite
+class Background : Sprite
 {
     private float roadstart;
     private float scrollSpeed = 10f;

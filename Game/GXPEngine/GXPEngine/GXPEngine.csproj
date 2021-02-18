@@ -43,6 +43,7 @@
     <Compile Include="Crosshair.cs" />
     <Compile Include="EnemyBullet.cs" />
     <Compile Include="FBI.cs" />
+    <Compile Include="GameOver.cs" />
     <Compile Include="GXPEngine\AddOns\Gizmos.cs" />
     <Compile Include="GXPEngine\AddOns\TiledLoader.cs" />
     <Compile Include="HUD.cs" />
@@ -92,6 +93,7 @@
     <Compile Include="PowerUpShield.cs" />
     <Compile Include="RoadBlock.cs" />
     <Compile Include="Smoke.cs" />
+    <Compile Include="StartScreen.cs" />
     <Compile Include="TopWaveBuilder.cs" />
     <Compile Include="Warning.cs" />
     <Compile Include="WaveBuilder.cs" />

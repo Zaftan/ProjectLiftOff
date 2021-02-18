@@ -19,7 +19,7 @@ public class Cop : AnimationSprite
 
     EnemyBullet bullet;
 
-    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 2, 255)
+    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 3, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
@@ -29,6 +29,7 @@ public class Cop : AnimationSprite
         this.y = posY;
         copX = this.x;
         copY = this.y;
+        SetCycle(1, 9);
     }
 
     void Update()

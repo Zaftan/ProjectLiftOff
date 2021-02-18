@@ -29,6 +29,8 @@ public class FBI : AnimationSprite
         this.y = posY;
         fbiX = this.x;
         fbiY = this.y;
+        SetCycle(1, 8);
+
     }
 
     void Update()
