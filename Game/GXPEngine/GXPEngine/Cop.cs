@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using GXPEngine;
-
 public class Cop : AnimationSprite
 {
     //Fixes the attack speed.
@@ -19,7 +18,7 @@ public class Cop : AnimationSprite
 
     EnemyBullet bullet;
 
-    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 2, 255)
+    public Cop(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Cop.png", 5, 3, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
@@ -29,11 +28,14 @@ public class Cop : AnimationSprite
         this.y = posY;
         copX = this.x;
         copY = this.y;
+        SetCycle(1, 9);
     }
 
     void Update()
     {
-        Animate();
+        if(GameManager.gameRunning)
+        {
+            Animate();
 
         if (shootTime % attackSpeed == 0)
         {
@@ -48,6 +50,7 @@ public class Cop : AnimationSprite
         }
         
         copDeath();
+        }
     }
 
     void OnCollision(GameObject obj)

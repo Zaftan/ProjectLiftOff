@@ -19,7 +19,7 @@ public class Bike : AnimationSprite
 
     EnemyBullet bullet;
 
-    public Bike(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/SmallCop.png", 5, 2, 20)
+    public Bike(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/SmallCop.png", 6, 2, 20)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
@@ -29,10 +29,15 @@ public class Bike : AnimationSprite
         this.y = posY;
         bikeX = this.x;
         bikeY = this.y;
+        SetCycle(1, 9);
+
     }
 
     void Update()
     {
+        if(GameManager.gameRunning)
+        {
+
         Animate();
 
         if (shootTime % attackSpeed == 0)
@@ -48,6 +53,8 @@ public class Bike : AnimationSprite
         }
 
         copDeath();
+
+        }
     }
 
     void OnCollision(GameObject obj)

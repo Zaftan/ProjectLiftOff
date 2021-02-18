@@ -40,3 +40,9 @@ C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEng
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpLife.png
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpShield.png
 C:\Users\Yavor\Desktop\School\Term 3\Project Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Warning.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\GameOver.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\InsertCoin.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpGun.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpLife.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpShield.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Warning.png

@@ -29,10 +29,15 @@ public class FBI : AnimationSprite
         this.y = posY;
         fbiX = this.x;
         fbiY = this.y;
+        SetCycle(1, 8);
+
     }
 
     void Update()
     {
+        if(GameManager.gameRunning)
+        {
+    
         Animate();
 
         if (shootTime % attackSpeed == 0)
@@ -48,6 +53,7 @@ public class FBI : AnimationSprite
         }
 
         copDeath();
+        }
         //Console.WriteLine("Enemys left:" + WaveBuilder.remainingEnemiesIntheWaves);
     }
 
