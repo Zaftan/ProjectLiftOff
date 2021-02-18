@@ -46,3 +46,4 @@ D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\A
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpLife.png
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\PowerUpShield.png
 D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Warning.png
+D:\School\P. Lift Off\ProjectLiftOff\Game\GXPEngine\GXPEngine\bin\Debug\Assets\Art\Sheriff.png

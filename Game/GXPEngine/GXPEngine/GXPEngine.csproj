@@ -97,6 +97,7 @@
     <Compile Include="PowerUpShield.cs" />
     <Compile Include="PowerUpSign.cs" />
     <Compile Include="RoadBlock.cs" />
+    <Compile Include="Sheriff.cs" />
     <Compile Include="Smoke.cs" />
     <Compile Include="StartScreen.cs" />
     <Compile Include="TopWaveBuilder.cs" />
@@ -147,6 +148,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Art\Road.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Assets\Art\Sheriff.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Assets\Art\SmallCop.png">

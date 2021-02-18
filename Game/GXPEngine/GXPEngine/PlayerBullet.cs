@@ -76,6 +76,11 @@ public class PlayerBullet : AnimationSprite
             LateDestroy();
         }
 
+        if (obj is Sheriff)
+        {
+            LateDestroy();
+        }
+
         if (obj is Border)
         {
             LateDestroy();

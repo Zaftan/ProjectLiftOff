@@ -7,7 +7,7 @@ using GXPEngine;
 public class WaveBuilder
 {
     static public float remainingEnemiesIntheWaves;
-    private int waves = 1;
+    private int waves = 0;
 
     public WaveBuilder()
     {
@@ -18,11 +18,13 @@ public class WaveBuilder
     {
         switch (waves)
         {
+            case 0: wave0(); break;
             case 1: wave1(); break;
             case 2: wave2(); break;
             case 3: wave3(); break;
             case 4: wave4(); break;
             case 5: wave5(); break;
+            case 6: wave6(); break;
         }
         waves++;
     }
@@ -33,6 +35,11 @@ public class WaveBuilder
         {
             WaveSpawner();
         }
+    }
+
+    private void wave0()
+    {
+        remainingEnemiesIntheWaves = 0;
     }
 
     private void wave1()
@@ -87,6 +94,13 @@ public class WaveBuilder
         Game.main.LateAddChild(cop3);
         Game.main.LateAddChild(cop4);
         Game.main.LateAddChild(cop5);
-        remainingEnemiesIntheWaves = 5;
+        remainingEnemiesIntheWaves = 1;
+    }
+
+    private void wave6()
+    {
+        Sheriff sheriff = new Sheriff(860f, 1300f);
+        Game.main.LateAddChild(sheriff);
+        remainingEnemiesIntheWaves = 1;
     }
 }
