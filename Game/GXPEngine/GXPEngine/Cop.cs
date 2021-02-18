@@ -85,4 +85,9 @@ public class Cop : AnimationSprite
             WaveBuilder.remainingEnemiesIntheWaves -= 1;
         }
     }
+
+    public void setCopHealth(float cphlth)
+    {
+        copHealth = cphlth;
+    }
 }

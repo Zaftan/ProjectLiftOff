@@ -62,7 +62,7 @@ public class MyGame : Game
 
     void Update()
     {
-        cheats();
+        //cheats();
 
         if (gameStarted == false)
         {

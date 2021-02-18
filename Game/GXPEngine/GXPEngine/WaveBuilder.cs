@@ -7,7 +7,7 @@ using GXPEngine;
 public class WaveBuilder
 {
     static public float remainingEnemiesIntheWaves;
-    static public int waves = 10;
+    static public int waves = 0;
 
     public WaveBuilder()
     {
@@ -45,6 +45,11 @@ public class WaveBuilder
 
     private void wave0()
     {
+        Cop cop = new Cop(860f, 1200f);
+        cop.setCopHealth(0);
+        Game.main.LateAddChild(cop);
+        HUD.SCORE -= 50;
+        remainingEnemiesIntheWaves = 1;
     }
 
     private void wave1()

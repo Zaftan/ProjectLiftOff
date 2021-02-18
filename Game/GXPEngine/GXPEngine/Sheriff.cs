@@ -39,7 +39,6 @@ public class Sheriff : AnimationSprite
 
     void Update()
     {
-          AddChild(bossHP);
         if (GameManager.gameRunning)
         {
             Animate();        
@@ -50,7 +49,7 @@ public class Sheriff : AnimationSprite
             }
             shootTime++;
 
-            if (this.y >= 800) 
+            if (this.y >= 750) 
             {
                 this.y -= sheriffSpeed;
                 hasStoped = true;
@@ -78,11 +77,11 @@ public class Sheriff : AnimationSprite
 
         if (hasStoped)
         {
-           /* Game.main.AddChild(bullet);
+            Game.main.AddChild(bullet);
             Game.main.AddChild(bullet2);
             Game.main.AddChild(bullet3);
             Game.main.AddChild(bullet4);
-            Game.main.AddChild(bullet5);*/
+            Game.main.AddChild(bullet5);
         }
     }
 

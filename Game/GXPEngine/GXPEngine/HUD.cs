@@ -12,9 +12,6 @@ public class HUD : Canvas
     Pen pen = new Pen(Brushes.DarkRed, 8);
     static public float SCORE;
     
-
-
-
     public HUD() : base(Game.main.width, Game.main.height, addCollider: false)
     {
         //
@@ -43,7 +40,7 @@ public class HUD : Canvas
         graphics.FillRectangle(Brushes.Black, 400, 100, 200, 30);
         graphics.FillRectangle(Brushes.Red, 400,100,MyGame.player.playerHealth * 2, 30);
         graphics.DrawString(health, font, Brushes.White, 482, 102);
-        graphics.DrawString(score, font, Brushes.White, 1400, 100);
+        graphics.DrawString(score, font, Brushes.White, 1300, 100);
     }
 
 
@@ -51,9 +48,9 @@ public class HUD : Canvas
     {
         if (WaveBuilder.waves == 11)
         {
-            graphics.DrawRectangle(pen, 800, 100, 300, 30);
-            graphics.FillRectangle(Brushes.Black, 800, 100, 300, 30);
-            graphics.FillRectangle(Brushes.Red, 800, 100, Sheriff.sheriffHealth * 2, 30);
+            graphics.DrawRectangle(pen, 1100, 950, 300, 30);
+            graphics.FillRectangle(Brushes.Black, 1100, 950, 300, 30);
+            graphics.FillRectangle(Brushes.Red, 1100, 950, Sheriff.sheriffHealth * 2, 30);
         }
 
         if (Sheriff.sheriffHealth <= 0)
