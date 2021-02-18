@@ -7,7 +7,7 @@ public class Sheriff : AnimationSprite
 {
     //Fixes the attack speed.
     private float attackSpeed = 65;
-    private float sheriffHealth = 150;
+    static public float sheriffHealth = 150;
     private float sheriffSpeed;
 
     public float copX;
@@ -21,11 +21,11 @@ public class Sheriff : AnimationSprite
 
     Sound Entry = new Sound(Settings.ASSET_PATH + "SFX/bossEntersStage.mp3");
     Sound Laugh = new Sound(Settings.ASSET_PATH + "SFX/sheriffLaugh.mp3");
-
     public Sheriff(float posX, float posY) : base(Settings.ASSET_PATH + "/Art/Sheriff.png", 6, 2, 255)
     {
         //SetOrigin(width / 2.0f, height / 2.0f);
         //rotation = 45;
+
         Entry.Play(volume:0.8f);
         Laugh.Play(volume: 0.6f);
         Random rnd = new Random();
@@ -39,9 +39,10 @@ public class Sheriff : AnimationSprite
 
     void Update()
     {
+          AddChild(bossHP);
         if (GameManager.gameRunning)
         {
-            Animate();
+            Animate();        
 
             if (shootTime % attackSpeed == 0)
             {
@@ -49,7 +50,7 @@ public class Sheriff : AnimationSprite
             }
             shootTime++;
 
-            if (this.y >= 800)
+            if (this.y >= 800) 
             {
                 this.y -= sheriffSpeed;
                 hasStoped = true;
@@ -77,11 +78,11 @@ public class Sheriff : AnimationSprite
 
         if (hasStoped)
         {
-            Game.main.AddChild(bullet);
+           /* Game.main.AddChild(bullet);
             Game.main.AddChild(bullet2);
             Game.main.AddChild(bullet3);
             Game.main.AddChild(bullet4);
-            Game.main.AddChild(bullet5);
+            Game.main.AddChild(bullet5);*/
         }
     }
 

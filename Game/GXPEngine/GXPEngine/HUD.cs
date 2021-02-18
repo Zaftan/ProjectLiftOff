@@ -23,6 +23,8 @@ public class HUD : Canvas
     {
         string score2 = "Score: " + SCORE;
         showHud();
+        showBossHP();
+        ScoreM();
         if (GameManager.gameRunning == false)
         {
             graphics.Clear(Color.Empty);
@@ -42,5 +44,30 @@ public class HUD : Canvas
         graphics.FillRectangle(Brushes.Red, 400,100,MyGame.player.playerHealth * 2, 30);
         graphics.DrawString(health, font, Brushes.White, 482, 102);
         graphics.DrawString(score, font, Brushes.White, 1400, 100);
+    }
+
+
+    void showBossHP()
+    {
+        if (WaveBuilder.waves == 11)
+        {
+            graphics.DrawRectangle(pen, 800, 100, 300, 30);
+            graphics.FillRectangle(Brushes.Black, 800, 100, 300, 30);
+            graphics.FillRectangle(Brushes.Red, 800, 100, Sheriff.sheriffHealth * 2, 30);
+        }
+
+        if (Sheriff.sheriffHealth <= 0)
+        {
+            graphics.Clear(Color.Empty);
+        }
+
+    }
+
+    void ScoreM()
+    {
+        if(SCORE < 0)
+        {
+            SCORE = 0;
+        }
     }
 }

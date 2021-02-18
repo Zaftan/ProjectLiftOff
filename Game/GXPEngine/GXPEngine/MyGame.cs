@@ -5,7 +5,7 @@ using GXPEngine;
 
 public class MyGame : Game
 {
-    int currentScene = 1;
+    static public int currentScene = 1;
     //Idk what static does but it told me to put it in for something to work.
     static public Player player;
     static public WaveBuilder builder;
@@ -26,7 +26,7 @@ public class MyGame : Game
 
     List<GameObject> gameObjs = new List<GameObject>();
 
-    public bool gameStarted = false;
+    static public bool gameStarted = false;
 
     private Crosshair cs;// = new Crosshair();
 
@@ -62,7 +62,7 @@ public class MyGame : Game
 
     void Update()
     {
-        //cheats();
+        cheats();
 
         if (gameStarted == false)
         {
@@ -80,6 +80,7 @@ public class MyGame : Game
             currentScene = 3;
             gameStarted = false;
         }
+
         SceneSwitcher(currentScene);
 
         builder.CountDown();
@@ -98,8 +99,7 @@ public class MyGame : Game
 
         switch (scene)
         {
-            case 1:
-                
+            case 1:         
                 if (!Game.main.HasChild(startScreen))
                 {
                     AddChild(startScreen);               
@@ -121,7 +121,7 @@ public class MyGame : Game
                         _music = new Sound(Settings.ASSET_PATH + "SFX/littleTownRobbers_LOOPABLE.mp3", looping: true);
                         _musicChannel2 = _music2.Play(volume: 0.2f);
                         PlayMusic();
-                        AddChild(go);                     
+                        AddChild(go);
                     }
                 }
 
@@ -137,7 +137,7 @@ public class MyGame : Game
                 {
                     RemoveChild(go);
                 }
-                currentScene = 4;
+               // currentScene = 4;
             break;
         }
     }

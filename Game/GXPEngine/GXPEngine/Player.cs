@@ -63,6 +63,7 @@ public class Player : AnimationSprite
             EnemyBullet eb = (EnemyBullet) obj;
             if (!eb.hit)
             {
+                HUD.SCORE -= 25;
                 playerHealth = playerHealth - EnemyBullet.bulletDamage;
                 obj.LateDestroy();
                 eb.hit = true;
@@ -72,6 +73,7 @@ public class Player : AnimationSprite
 
         if (obj is RoadBlock)
         {
+            HUD.SCORE -= 50;
             TirePop.Play(volume: 0.3f);
             playerHealth = playerHealth - RoadBlock.blockDamage;
             obj.LateDestroy();
@@ -116,6 +118,7 @@ public class Player : AnimationSprite
             EnemyBullet eb = (EnemyBullet) cobj.other;
             if (!eb.hit)
             {
+                HUD.SCORE -= 25;
                 playerHealth = playerHealth - EnemyBullet.bulletDamage;
                 cobj.other.LateDestroy();
                 eb.hit = true;
@@ -125,6 +128,7 @@ public class Player : AnimationSprite
 
         if (cobj != null && cobj.other is RoadBlock)
         {
+            HUD.SCORE -= 50;
             TirePop.Play(volume: 0.3f);
             playerHealth = playerHealth - RoadBlock.blockDamage;
             cobj.other.LateDestroy();

@@ -7,7 +7,7 @@ using GXPEngine;
 public class WaveBuilder
 {
     static public float remainingEnemiesIntheWaves;
-    private int waves = 0;
+    static public int waves = 10;
 
     public WaveBuilder()
     {
@@ -29,6 +29,7 @@ public class WaveBuilder
             case 8: wave8(); break;
             case 9: wave9(); break;
             case 10: wave10(); break;
+            case 11: wave11(); break;
 
         }
         waves++;
@@ -44,7 +45,6 @@ public class WaveBuilder
 
     private void wave0()
     {
-        remainingEnemiesIntheWaves = 0;
     }
 
     private void wave1()
@@ -144,4 +144,9 @@ public class WaveBuilder
         Game.main.LateAddChild(sheriff);
         remainingEnemiesIntheWaves = 1;
     }
+    private void wave11()
+    {
+        MyGame.currentScene = 3;
+    }
+
 }
