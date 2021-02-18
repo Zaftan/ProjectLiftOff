@@ -8,6 +8,7 @@ using GXPEngine.Core;
 public class Player : AnimationSprite
 {
     PlayerBullet bullet;
+    
 
     float shootTime;
 
@@ -46,6 +47,7 @@ public class Player : AnimationSprite
 
         Timer();
         Timer2();
+        
     }
 
     void OnCollision(GameObject obj)
@@ -72,10 +74,18 @@ public class Player : AnimationSprite
 
         if (obj is PowerUpShield)
         {
+            PowerUpAnimationS pas = new PowerUpAnimationS();
+            Game.main.LateAddChild(pas);
             curHP = playerHealth;
             timeStart2 = Time.time;
             Invulnerability = true;
             obj.LateDestroy();
+        }
+
+        if (obj is PowerUpLife)
+        {
+            PowerUpAnimationL pal = new PowerUpAnimationL();
+            Game.main.LateAddChild(pal);
         }
     }
 
@@ -108,6 +118,8 @@ public class Player : AnimationSprite
         {
             curHP = curHP + 50;
             playerHealth = playerHealth + 50;
+            PowerUpAnimationL pal = new PowerUpAnimationL();
+            Game.main.LateAddChild(pal);
             cobj.other.LateDestroy();
         }
 
@@ -117,6 +129,8 @@ public class Player : AnimationSprite
             timeStart2 = Time.time;
             Invulnerability = true;
             cobj.other.LateDestroy();
+            PowerUpAnimationS pas = new PowerUpAnimationS();
+            Game.main.LateAddChild(pas);
         }
     }
 
@@ -135,6 +149,8 @@ public class Player : AnimationSprite
             Invulnerability = false;
         }
     }
+
+
 
     void movement()
     {

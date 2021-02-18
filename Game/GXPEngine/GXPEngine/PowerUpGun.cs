@@ -5,8 +5,7 @@ using System.Text;
 using GXPEngine;
     public class PowerUpGun : Sprite
     {
-        float speed = 2f;
-        float time = 600;
+        float speed = 3f;
         private float timeStart;
 
         public PowerUpGun(float posX) : base(Settings.ASSET_PATH + "Art/PowerUpGun.png")
@@ -17,7 +16,6 @@ using GXPEngine;
 
         void Update()
         {
-            Console.WriteLine(timeStart);
             movement();
             DestroyThis();
         }

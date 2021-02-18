@@ -6,7 +6,7 @@ using GXPEngine;
    public class PowerUpLife : Sprite
     {
         public float healthRestored = 50;
-        float speed = 2f;
+        float speed = 3f;
        public PowerUpLife(float posX) : base(Settings.ASSET_PATH + "Art/PowerUpLife.png")
         {
         this.x = posX;
@@ -25,7 +25,7 @@ using GXPEngine;
             {
                 MyGame.player.playerHealth += healthRestored;
                 MyGame.player.curHP += healthRestored;
-            LateDestroy();
+                LateDestroy();
             }
 
         }

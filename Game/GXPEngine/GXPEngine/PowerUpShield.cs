@@ -5,8 +5,7 @@ using System.Text;
 using GXPEngine;
 public class PowerUpShield : Sprite
 {
-    float speed = 2f;
-    float time = 600;
+    float speed = 3f;
     float timeStart = 0;
 
 
